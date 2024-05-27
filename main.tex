@@ -22,6 +22,12 @@
 \usepackage{csquotes}
 
 
+%% SETTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Remove identation on "double-linebreaks".
+\setlength{\parindent}{0pt}
+
+
 %% LICENSE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% Remove all the licence, conference, ISBN and DOI information that are the
@@ -39,7 +45,7 @@
 %% If you are preparing content for an event sponsored by ACM SIGGRAPH, you must
 %% use the "author year" style of citations and references.
 %% Uncommenting the next command will enable that style.
-\citestyle{acmauthoryear}
+% \citestyle{acmauthoryear}
 
 %% BEGIN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% End of the preamble, start of the body of the document source.
@@ -47,7 +53,8 @@
 
 %% TITLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% The "title" command has an optional parameter,
-\title{A really cool title about genetic algorithms and timetabling}
+% \title{Genetic Algorithms for Timetabling: The current state of the art}
+\title{Overview of Genetic Algorithms in Educational Timetabling}
 
 %% AUTHORS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \author{Luca Quaer}
@@ -87,7 +94,68 @@ Empty
 
 %% CONTENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
-Hello World! \cite{Abril07}
+% What is educational timetabling
+Educational timetabling involves creating schedules for educational
+institutions such as schools, colleges, and universities.
+The problem domain can be divided into the following three main problems
+\cite{kingston2013educational,schaerf1999survey}:
+High-School Timetabling (HTT), University Course Timetabling (CTT) and
+University Examination Timetabling (ETT).
+Although a clear distinction between these three problems is not always
+possible, they generally differ significantly from one another
+\cite{Beligiannis2009}.
+However, each of these problems essentially is a resource allocation problem
+with the goal of assigning classrooms, instructors, and students to specific
+time slots for various courses or activities, ensuring that all constraints and
+requirements are met.
+This includes avoiding conflicts (e.g., a student being scheduled for two
+classes at the same time), adhering to institutional policies, and maximizing
+the efficient use of resources.
+
+% Why is it complicated?
+The difficulty in finding a valid and effective solution to such a problem
+lies in meeting the diverse requirements of different stakeholders
+(e.g. students, teachers, administration), multiple constraints and resolving
+resource conflicts in a combinatorial complex solution space caused by the
+numerous constraints.
+Timetabling problems like these are therefore known to be NP-complete in their
+general form, meaning that the difficulty of finding a solution increases
+exponentially with the problem size, which in turn makes it impossible to find
+a deterministic algorithm providing an acceptable solution in polynomial time
+\cite{Beligiannis2009}.
+%
+% What are solutions to the problem?
+Therefore, optimization algorithms trying to find (near) optimal solutions have
+been used as alternative methods of solving educational timetabling problems.
+Examples for such methods are local search and simulated annealing techniques
+as well as computational intelligence algorithms like genetic algorithms (GAs),
+Tabu Search, Ant Systems and other metaheuristic approaches
+\cite{Beligiannis2009}.
+
+% The algorithm of interest in this paper
+
+
+%
+% What is a GA?
+
+
+\section{Methods}
+To do.
+
+\section{Basic Concepts}
+To do.
+
+\section{Advanced Techniques}
+To do.
+
+\section{Discussion}
+To do.
+
+\section{Conclusion}
+To do.
+
+\section{Future Work}
+To do.
 
 
 %% ACKNOWLEDGEMENTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
