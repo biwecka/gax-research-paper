@@ -85,7 +85,7 @@ Empty
 %% KEYWORDS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Keywords. The author(s) should pick words that accurately describe
 %% the work being presented. Separate the keywords with commas.
-% \keywords{One, Two}
+\keywords{Genetic Algorithms, Educational Timetabling, Metaheuristics}
 
 
 %% TITLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -93,6 +93,8 @@ Empty
 
 
 %% CONTENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Introduction ------------------------------------------------------------- %%
 \section{Introduction}
 % What is educational timetabling
 Educational timetabling involves creating schedules for educational
@@ -125,25 +127,77 @@ a deterministic algorithm providing an acceptable solution in polynomial time
 \cite{Beligiannis2009}.
 %
 % What are solutions to the problem?
-Therefore, optimization algorithms trying to find (near) optimal solutions have
-been used as alternative methods of solving educational timetabling problems.
-Examples for such methods are local search and simulated annealing techniques
-as well as computational intelligence algorithms like genetic algorithms (GAs),
-Tabu Search, Ant Systems and other metaheuristic approaches
-\cite{Beligiannis2009}.
+One popular approach to addressing the complexity of timetabling problems is the
+use of metaheuristic algorithms \cite{Beligiannis2009}.
+This class of algorithms leverages a non-deterministic search approach which
+compromises on finding an optimal solution in favor of better runtime
+performance. Consequently, such algorithms are not guaranteed to find
+the best solution for a given problem, but a near optimal one
+\cite{Affenzeller2009}.
+Despite this limitation, metaheuristic algorithms are widely used in educational
+timetabling due to their ability to provide high-quality solutions within
+a reasonable timeframe.
+These algorithms can be broadly classified into two categories: single-solution
+and population-based metaheuristics \cite{Katoch2021}.
+Single-solution based algorithms use a single candidate solution and iteratively
+improve it by using local search, but are prone to get stuck in local maxima
+\cite{Katoch2021}.
+Population-based metaheuristics on the other hand work on multiple candidate
+solutions during the search process, avoiding the risk of getting stuck
+in a local maximum by maintaining diversity among the solution candidates
+\cite{Katoch2021}.
+Popular single-solution based algorithms in the timetabling domain are
+simulated annealing, local search and Tabu search
+\cite{Ceschia2023, Katoch2021}.
+Well-known population based metaheuristics are genetic algorithms, particle
+swarm optimization and ant colony systems \cite{Beligiannis2009, Katoch2021}.
 
-% The algorithm of interest in this paper
+% Solving problems of such complexity in a practicable timeframe is therefore
+% mostly done by using metaheuristic algorithms, which find solutions to
+% optimization problems but are not guaranteed to find the best solution.
+% Therefore, optimization algorithms trying to find (near) optimal solutions have
+% been used as alternative methods of solving educational timetabling problems.
+% Examples for such methods are local search and simulated annealing techniques
+% as well as computational intelligence algorithms like genetic algorithms (GAs),
+% Tabu Search, Ant Systems and other metaheuristic approaches
+% \cite{Beligiannis2009}.
 
+% The algorithm of interest; Why are GAs well suited for timetabling?
+Among these methods, genetic algorithms are known for their versatility and
+application in a variety of use cases with the need of searching for solutions
+of a combinatorial problem in a large solution space.
+Therefore, this paper specifically focuses on genetic algorithms and how they
+are used in the domain of educational timetabling.
 
-%
 % What is a GA?
+Genetic algorithms (abbr. \textit{GA}) are a heuristic search method inspired by
+the process of natural selection in biological evolution and thus belong to
+the group of evolutionary algorithms \cite{Katoch2021}. As mentioned previously,
+genetic algorithms utilize a population based approach, meaning multiple
+solution candidates are iteratively evolved through numerous generations
+imitating the Darwinian theory of survival of the fittest \cite{Katoch2021}.
+
+% Introduce structure
 
 
+
+%% Methods ------------------------------------------------------------------ %%
 \section{Methods}
 To do.
 
+%% Basic Concepts ----------------------------------------------------------- %%
 \section{Basic Concepts}
+% Introduction into GAs
+
+% Diagram of the different GAs and how they can be classified/grouped.
+
 To do.
+\subsection{A}
+Sub A
+
+\subsection{B}
+Sub B
+
 
 \section{Advanced Techniques}
 To do.

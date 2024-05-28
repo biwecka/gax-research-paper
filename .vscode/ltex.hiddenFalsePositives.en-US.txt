@@ -1,0 +1,2 @@
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qprintacmref=false printfolios=true [1]\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Qprintacmref=false printfolios=true [1]\\E$"}
