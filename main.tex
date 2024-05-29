@@ -197,16 +197,67 @@ algorithms, the research results will be visualized and discussed.
 %% Basic Concepts ----------------------------------------------------------- %%
 \section{Basic Concepts}
 % Introduction into GAs
+% - GA is an optimization algorithm
+% - inspired from natural selection (and genetics)
+% - work on a set/population of chromosomes
+% - population based search algorithm utilizing survival of the fittest
+%   - each chromosome is a member of the population
+%   - population consists of multiple chromosomes
+% - work on strings of data called chromosomes
 
-% Diagram of the different GAs and how they can be classified/grouped.
+% - new populations are produces by iterative use of genetic operators on
+%   individuals in the population
+% - chromosome representation (encoding), selection, crossover, mutation and 
+%   fitness function are key elements of any GA
+% - general procedure of a GA:
 
-To do.
+% - constraints
+%   - equality constraints: can usually be incorporated within the fitness
+%     function
+%   - inequality constraints: may be handled in two ways
+%     - evaluate objective function and check if any constraints are violated
+%       - if not, all good
+%       - if so, solution/chromosome is unacceptable and assigned no fitness
+%     - penalty method, decreasing the fitness value of strings/chromosomes
+%       that violate the constraints by an amount proportional to the cost of
+%       violating that constraint.
+%       thus the problem is actually transformed into an unconstrained one with
+%       a different (peanalized) objective function
+%
+
+Genetic algorithms are a type of search and optimization algorithm inspired
+by the biological process of reproduction and natural selection and represent
+one branch in the field of evolutionary computing \cite{goldberg1989, Carr2014}.
+
+% TODO: Diagram of the different GAs and how they can be classified/grouped.
+
+In the search for a solution to an optimization problem, the set of possible
+solutions -- the so-called solution space -- must first be determined and made
+comprehensible for an algorithm in form of a data structure, which is suitable
+for representing a solution \cite{Affenzeller2009}.
+This representation of the solution is also called \textit{encoding} and
+contains the data of a possible solution to the problem to be solved.
+In nature, this data is encoded on chromosomes. Similarly, in genetic algorithms
+the possible solution in coded form is also called \textit{chromosome}
+\cite{Affenzeller2009}.
+
+In addition, genetic algorithms employ a population based search approach,
+whereby instead of a single potential solution a whole set of solutions is
+iteratively improved. Such a set of solutions is called \textit{population}
+and consists contains multiple chromosomes. The stages of iterative improvements
+are called \textit{generations} \cite{Affenzeller2009}.
+
+In order for the algorithm to optimize towards a desired solution, it is
+necessary to have a measure in place to evaluate and compare the chromosomes.
+This value referred to as \textit{fitness} and is provided by the
+\textit{fitness function} (also called \textit{objective function})
+\cite{Affenzeller2009}.
+
+% Mit der Definition dieser Grundlagen kann nun der allgemeine Ablauf eines
+% genetischen Algorithmus erläutert werden.
+
 \subsection{A}
 Sub A
-
-\subsection{B}
-Sub B
-
 
 \section{Advanced Techniques}
 To do.
