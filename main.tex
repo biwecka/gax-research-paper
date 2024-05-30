@@ -187,7 +187,7 @@ in the domain of educational timetabling and not timetabling or scheduling
 problems in general.
 To accomplish this, a thorough search among recent and early publications on
 this topic has been conducted, to create a representative overview of the most
-important concepts of genetic search used in timetabling.
+important concepts of genetic search used in the field of timetabling.
 After an introduction of the basic and some advanced concepts of genetic
 algorithms, the research results will be visualized and discussed.
 
@@ -229,8 +229,6 @@ Genetic algorithms are a type of search and optimization algorithm inspired
 by the biological process of reproduction and natural selection and represent
 one branch in the field of evolutionary computing \cite{goldberg1989, Carr2014}.
 
-% TODO: Diagram of the different GAs and how they can be classified/grouped.
-
 In the search for a solution to an optimization problem, the set of possible
 solutions -- the so-called solution space -- must first be determined and made
 comprehensible for an algorithm in form of a data structure, which is suitable
@@ -238,13 +236,13 @@ for representing a solution \cite{Affenzeller2009}.
 This representation of the solution is also called \textit{encoding} and
 contains the data of a possible solution to the problem to be solved.
 In nature, this data is encoded on chromosomes. Similarly, in genetic algorithms
-the possible solution in coded form is also called \textit{chromosome}
-\cite{Affenzeller2009}.
+the possible solution in coded form is also called \textit{chromosome} or
+\textit{individual} \cite{Affenzeller2009}.
 
 In addition, genetic algorithms employ a population based search approach,
 whereby instead of a single potential solution a whole set of solutions is
 iteratively improved. Such a set of solutions is called \textit{population}
-and consists contains multiple chromosomes. The stages of iterative improvements
+and consists of multiple chromosomes. The stages of iterative improvements
 are called \textit{generations} \cite{Affenzeller2009}.
 
 In order for the algorithm to optimize towards a desired solution, it is
@@ -253,11 +251,112 @@ This value referred to as \textit{fitness} and is provided by the
 \textit{fitness function} (also called \textit{objective function})
 \cite{Affenzeller2009}.
 
-% Mit der Definition dieser Grundlagen kann nun der allgemeine Ablauf eines
-% genetischen Algorithmus erläutert werden.
+With these basic terms defined, the general process of genetic algorithms
+can now be described as follows:
+First, an \textit{initial population} must be created and the fitness of its
+chromosomes must be evaluated \cite{Affenzeller2009}.
+Pairs (or triples, quadruples, etc.) are then selected
+(\textit{selection} phase) from this population in order to reproduce
+(known as \textit{crossover}) \cite{Affenzeller2009}.
+The resulting offspring may undergo one or more mutations
+(\textit{mutation} phase) with a defined probability before the fitness of
+these new chromosomes is determined (\textit{evaluation} phase)
+\cite{Affenzeller2009}.
+Based on certain criteria chromosomes from the current generation and their
+offspring are now selected, to replace the population with a new one
+(\textit{replacement} phase) \cite{Affenzeller2009}.
+The result of this step is a new generation of chromosomes forming a new
+(usually fitter) population \cite{Affenzeller2009}.
+From this population, chromosomes are once again selected for reproduction,
+starting the process all over again \cite{Affenzeller2009}.
+The genetic algorithm could theoretically continue indefinitely according to
+this pattern, with termination conditions serving as the only means of halting
+the process \cite{Beligiannis2009}.
+%
+The forementioned phases of genetic algorithms will be explained in the
+following chapters.
 
-\subsection{A}
-Sub A
+\subsection{Encoding}
+Genetic algorithms require two essential components: an encoding and
+a fitness function \cite{Affenzeller2009}.
+The encoding plays a pivotal role in the design of a genetic algorithm
+\cite{Katoch2021}.
+Its most significant property is that it can completely represent the solution
+space of the problem at hand, thereby deriving the potential solution to the
+problem from a given chromosome \cite{Affenzeller2009}.
+Moreover, the encoding must be designed in consideration of the data
+processing of other genetic algorithm components, such as the fitness function
+and the crossover operator \cite{Affenzeller2009}.
+The fitness function must calculate the fitness value based on this
+representation of a solution candidate, and the crossover operator should
+generate offspring that are as valid as possible \cite{Affenzeller2009}.
+In particular, the latter aspect can often only be fulfilled by an adapted,
+domain-specific representation \cite{Affenzeller2009}.
+%
+The following paragraphs present some well-known encodings.
+
+\subsubsection{Binary Encoding}
+% \subsubsection{Hexadecimal Encoding}
+% \subsubsection{Decimal Encoding}
+\subsubsection{Permutation Encoding}
+\subsubsection{Value Encoding}
+% \subsubsection{Tree Encoding}
+\subsubsection{List Encoding}
+\subsubsection{Matrix Encoding}
+
+
+\subsection{Fitness Function}
+The fitness function of a genetic algorithm is arguably its most crucial
+component \cite{Beligiannis2009}.
+\enquote{It is the only chance that you have to communicate your intentions
+to the powerful process that genetic programming represents. Make sure
+that it communicates precisely what you desire}\cite{kinnear1994perspective}.
+Especially in the context of constrained optimization problems with multiple
+objectives (e.g. hard and soft constraints), the fitness function must be
+carefully designed to convey the correct optimization target for solving the
+problem at hand \cite{Beligiannis2009,Carr2014}.
+
+% the design of the fitness function is highly dependent on the choosen encoding,
+% yet there are some popular approaches, especially for multi-objective ...
+
+% timetabling problems usually are multi-objective optimization problems
+% -> because of that, we'll focus on multi-objective fitness functions
+% \cite{Beligiannis2009}.
+
+% easiest is probably counting the amount of constraint violations
+% (of hard and/or soft constraints)
+
+% another possibility is calculating a wheighted sum
+
+
+\subsection{Initial Population}
+Once an appropriate encoding and a fitness function have been identifier,
+the first step in the actual execution of the algorithm is to generate an
+initial population \cite{Affenzeller2009}.
+
+% popular options: random or heuristic
+% if domain allows for heuristic generation of valid chromosomes, that might
+% pose and advantage for the development of the population
+% but oftentimes it's hard to find valid solution candidates in the first place,
+% so only random initialization of the population is viable.
+
+\subsection{Selection}
+asdf
+
+\subsection{Crossover}
+asdf (und \cite{Beligiannis2009})
+
+\subsection{Mutation}
+asdf
+
+\subsection{Evaluation}
+asdf
+
+\subsection{Replacement}
+asdf
+
+\subsection{Termination}
+asdf \cite{Beligiannis2009}
 
 \section{Advanced Techniques}
 To do.

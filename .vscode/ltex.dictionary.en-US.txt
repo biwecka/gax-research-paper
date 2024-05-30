@@ -3,3 +3,4 @@ metaheuristics
 metaheuristic
 Tabu
 Metaheuristics
+encodings
