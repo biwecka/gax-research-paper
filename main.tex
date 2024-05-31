@@ -20,7 +20,7 @@
 
 %% PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{csquotes}
-
+\usepackage{fancyhdr}
 
 %% SETTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -36,6 +36,8 @@
 \settopmatter{printfolios=true} % Adds page numbers (optional, for review)
 \renewcommand\footnotetextcopyrightpermission[1]{} % Removes conference footnote
 
+% TODO: How to remove the conference from the page header?
+% \acmConference[ ]{ }{ }{ }
 
 %% CITATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -196,35 +198,6 @@ algorithms, the research results will be visualized and discussed.
 
 %% Basic Concepts ----------------------------------------------------------- %%
 \section{Basic Concepts}
-% Introduction into GAs
-% - GA is an optimization algorithm
-% - inspired from natural selection (and genetics)
-% - work on a set/population of chromosomes
-% - population based search algorithm utilizing survival of the fittest
-%   - each chromosome is a member of the population
-%   - population consists of multiple chromosomes
-% - work on strings of data called chromosomes
-
-% - new populations are produces by iterative use of genetic operators on
-%   individuals in the population
-% - chromosome representation (encoding), selection, crossover, mutation and 
-%   fitness function are key elements of any GA
-% - general procedure of a GA:
-
-% - constraints
-%   - equality constraints: can usually be incorporated within the fitness
-%     function
-%   - inequality constraints: may be handled in two ways
-%     - evaluate objective function and check if any constraints are violated
-%       - if not, all good
-%       - if so, solution/chromosome is unacceptable and assigned no fitness
-%     - penalty method, decreasing the fitness value of strings/chromosomes
-%       that violate the constraints by an amount proportional to the cost of
-%       violating that constraint.
-%       thus the problem is actually transformed into an unconstrained one with
-%       a different (peanalized) objective function
-%
-
 Genetic algorithms are a type of search and optimization algorithm inspired
 by the biological process of reproduction and natural selection and represent
 one branch in the field of evolutionary computing \cite{goldberg1989, Carr2014}.
@@ -276,6 +249,7 @@ the process \cite{Beligiannis2009}.
 The forementioned phases of genetic algorithms will be explained in the
 following chapters.
 
+%%% Encoding %%%
 \subsection{Encoding}
 Genetic algorithms require two essential components: an encoding and
 a fitness function \cite{Affenzeller2009}.
@@ -305,68 +279,165 @@ The following paragraphs present some well-known encodings.
 \subsubsection{Matrix Encoding}
 
 
+%%% Fitness Function %%%
 \subsection{Fitness Function}
-The fitness function of a genetic algorithm is arguably its most crucial
-component \cite{Beligiannis2009}.
-\enquote{It is the only chance that you have to communicate your intentions
-to the powerful process that genetic programming represents. Make sure
-that it communicates precisely what you desire}\cite{kinnear1994perspective}.
+\enquote{In genetic algorithms a fitness function assigns a score to each
+individual in a population; this fitness value indicates the quality of the
+solution represented by the individual} \cite{Affenzeller2009}.
+\enquote{Evaluating the fitness function for each individual should be
+relatively fast due to the number of times it will be invoked}
+\cite{Affenzeller2009}.
+Consequently, it is arguably the most crucial component of a genetic algorithm,
+and it is the only chance to steer the process of genetic evolution in
+accordance with the desired optimization intentions
+\cite{Beligiannis2009,kinnear1994perspective}.
 Especially in the context of constrained optimization problems with multiple
 objectives (e.g. hard and soft constraints), the fitness function must be
 carefully designed to convey the correct optimization target for solving the
 problem at hand \cite{Beligiannis2009,Carr2014}.
+Timetabling problems usually pose multiple objectives in form of hard and
+soft constraints \cite{Beligiannis2009}. These differ in their severity:
+hard constraints must be satisfied in order for the solution to represent a
+valid timetable, soft constraints on the other hand must not be satisfied and
+only contribute to the quality of the solution \cite{Beligiannis2009}.
 
-% the design of the fitness function is highly dependent on the choosen encoding,
-% yet there are some popular approaches, especially for multi-objective ...
+As previously stated, the design of the fitness function heavily depends on the
+employed encoding scheme. The encoded data of a solution candidate serves as
+the input value utilized by the fitness function to calculate the fitness of a
+chromosome \cite{Affenzeller2009}. Although there is no universal recipe for
+designing fitness functions, because they are highly domain-specific,
+there are some methods that can be used as a starting point.
+A prevalent method is to utilize a weighted sum as the foundation of a
+multi-objective fitness function. Furthermore, such a function can be enhanced
+through the incorporation of a penalty function, which accounts for constraint
+violations at a specific weight per constraint \cite{Beligiannis2009}.
 
-% timetabling problems usually are multi-objective optimization problems
-% -> because of that, we'll focus on multi-objective fitness functions
-% \cite{Beligiannis2009}.
-
-% easiest is probably counting the amount of constraint violations
-% (of hard and/or soft constraints)
-
-% another possibility is calculating a wheighted sum
+% OPTIONAL: Another option for multi-objective GAs is a Pareto-based fitness
+%           function \cite{Katoch2021}.
 
 
+%%% Initial Population %%%
 \subsection{Initial Population}
-Once an appropriate encoding and a fitness function have been identifier,
-the first step in the actual execution of the algorithm is to generate an
+Once an appropriate encoding and a fitness function have been established,
+the initial step in the actual execution of the algorithm is to generate an
 initial population \cite{Affenzeller2009}.
-
-% popular options: random or heuristic
-% if domain allows for heuristic generation of valid chromosomes, that might
-% pose and advantage for the development of the population
-% but oftentimes it's hard to find valid solution candidates in the first place,
-% so only random initialization of the population is viable.
+The initial population can be generated in two ways: randomly or heuristically.
+If the problem's difficulty lies not in finding valid solutions, but in finding
+the optimal solution, then heuristic initialization may be a beneficial
+approach, as it could facilitate the evolution of the population.
+However, in cases where finding a valid solution is already a significant
+challenge, heuristics are not a viable option. In such instances, the initial
+population must be created randomly \cite{Affenzeller2009}.
 
 \subsection{Selection}
-asdf
+In the selection phase of a genetic algorithm, chromosomes are selected for
+mating (\textit{crossover}) \cite{Affenzeller2009}.
+The prerequisite for this phase of the genetic algorithm is, that the
+fitness of each chromosome in the population has been evaluated
+\cite{Affenzeller2009}.
+At present, the most commonly employed selection techniques are roulette wheel,
+rank, tournament, Boltzmann, and stochastic universal sampling
+\cite{Katoch2021}.
+The following sections present a brief overview of selected methods.
 
+\subsubsection{Roulette Wheel}
+See \cite{Affenzeller2009} and \cite{Katoch2021}.
+
+\subsubsection{Tournament}
+See \cite{Affenzeller2009} and \cite{Katoch2021}.
+
+\subsubsection{Rank}
+See \cite{Affenzeller2009}.
+
+% \subsubsection{Bolzmann}
+% See \cite{Katoch2021}.
+
+\subsubsection{Comparison of selection techniques}
+See table 3 in \cite{Katoch2021}
+
+%%% Crossover %%%
 \subsection{Crossover}
-asdf (und \cite{Beligiannis2009})
+Crossover is the genetic operator which performs the actual mating of
+individuals selected during the selection phase \cite{Beligiannis2009}.
+Given the close relation between the encoding scheme and the crossover operator,
+certain crossover operators may not be compatible with some encodings in context
+of the problem at hand \cite{Affenzeller2009}.
 
+\subsubsection{Single Point}
+See \cite{Affenzeller2009}.
+
+\subsubsection{Multiple Point}
+See \cite{Affenzeller2009} and \cite{Katoch2021}.
+
+\subsubsection{Uniform Point}
+See \cite{Affenzeller2009}.
+
+\subsubsection{Partially matched crossover}
+See \cite{Katoch2021}.
+
+\subsubsection{Order crossover}
+See \cite{Katoch2021}.
+
+\subsubsection{Shuffle crossover}
+See \cite{Katoch2021}.
+
+\subsubsection{Comparison of different crossover techniques}
+See table 4 \cite{Katoch2021}.
+
+%%% Mutation %%%
 \subsection{Mutation}
-asdf
+The mutation operator is used on the offspring created by the crossover
+operation, to allow undirected jumps to slightly different areas of the search
+space \cite{Affenzeller2009}. This procedure maintains genetic diversity
+throughout generations and helps in efficiently exploring the search space
+\cite{Katoch2021, Affenzeller2009}.
 
+The actual implementation of the mutation operator greatly depends on the chosen
+encoding, because mutating a chromosome could potentially lead to an invalid
+solution candidate depending on how the encoding is designed.
+
+Well-known mutation operators are displacement, simple inversion and scramble
+mutation.
+
+\subsubsection{Displacement Mutation (DM)}
+See \cite{Katoch2021}.
+
+\subsubsection{Simple Inversion Mutation (SIM)}
+See \cite{Katoch2021}.
+
+\subsubsection{Scramble Mutation (SM)}
+See \cite{Katoch2021}.
+
+%%% Evaluation %%%
 \subsection{Evaluation}
-asdf
+For the sake of completeness, the evaluation is listed here as separate phase,
+even though this is not common in the researched literature. The evaluation
+phase serves as the final step after successful application of the crossover
+and mutation operations, in which the fitness of the new individuals
+must be calculated in order to continue with the genetic algorithm.
 
+%%% Replacement %%%
 \subsection{Replacement}
 asdf
 
+%%% Termination %%%
 \subsection{Termination}
 asdf \cite{Beligiannis2009}
 
+
+%% Advanced Techniques ------------------------------------------------------ %%
 \section{Advanced Techniques}
 To do.
 
+%% Discussion --------------------------------------------------------------- %%
 \section{Discussion}
 To do.
 
+%% Conclusion --------------------------------------------------------------- %%
 \section{Conclusion}
 To do.
 
+%% Future Work -------------------------------------------------------------- %%
 \section{Future Work}
 To do.
 
