@@ -270,13 +270,32 @@ domain-specific representation \cite{Affenzeller2009}.
 The following paragraphs present some well-known encodings.
 
 \subsubsection{Binary Encoding}
-% \subsubsection{Hexadecimal Encoding}
-% \subsubsection{Decimal Encoding}
-\subsubsection{Permutation Encoding}
+\cite{Katoch2021}
+\cite{Affenzeller2009}
+
+% Mention that decimal and hexadecimal encoding are analogous to binary encoding
+% and they just use other "values" \cite{Katoch2021}
+
+
 \subsubsection{Value Encoding}
-% \subsubsection{Tree Encoding}
-\subsubsection{List Encoding}
-\subsubsection{Matrix Encoding}
+\cite{Katoch2021}
+% similar to binary encoding, but the values can be real nubers, integers
+% or characters
+
+
+\subsubsection{Permutation Encoding}
+\cite{Katoch2021}
+
+
+\subsubsection{\enquote{Matrix Encoding}}
+% In quotes, because it's not an actual encoding. It is more what the encoding
+% represents - namely a matrix.
+% depending on the meaning of the encoded data, an encoded matrix could
+% be interpreted as permutation encoding or
+% Matrices can be used to encode the adjacency matrix/representation of
+% ordering problems \cite{Affenzeller2009}.
+
+
 
 
 %%% Fitness Function %%%
@@ -418,16 +437,66 @@ must be calculated in order to continue with the genetic algorithm.
 
 %%% Replacement %%%
 \subsection{Replacement}
-asdf
+After the current generation has reproduced in the selection, cross-over and
+mutation phase, which created new offspring, the question arises as to which
+of the new solution candidates should become members of the next generation
+\cite{Affenzeller2009}. In context of evolution the replacement strategy
+determines the life span of the individuals and substantially influences
+the convergence behavior of the algorithm \cite{Affenzeller2009}.
+The following schemes are possible replacement strategies for genetic
+algorithms:
+
+\subsubsection{Generational Replacement}
+\cite{Affenzeller2009}
+
+\subsubsection{Elitism}
+\cite{Affenzeller2009}
+
+\subsubsection{Delete-$n$-last}
+\cite{Affenzeller2009}
+
+\subsubsection{Delete-$n$}
+\cite{Affenzeller2009}
+
+\subsubsection{Tournament Replacement}
+\cite{Affenzeller2009}
+
 
 %%% Termination %%%
 \subsection{Termination}
-asdf \cite{Beligiannis2009}
+As previously stated, the evolutionary process in genetic algorithms is
+an infinite loop that requires a termination criterion to halt.
+The desired termination constraint may vary depending on the problem and the
+context in which the algorithm is used in.
+One straightforward approach is to simply stop the genetic algorithm after a
+certain number of generations has been reached \cite{Beligiannis2009}.
+Another widely used method is to terminate the algorithm when the fitness value
+of the best individual has not changed over a predefined number of
+generations \cite{Carr2014}.
 
 
 %% Advanced Techniques ------------------------------------------------------ %%
 \section{Advanced Techniques}
-To do.
+
+%%% Direct and Indirect Encoding %%%
+\subsection{Direct and Indirect Encoding}
+
+%%% Non-standard genetic operators %%%
+\subsection{Non-standard genetic operators}
+
+% Especiall in timetabling problems, where a customized matrix encoding is
+% used, custom crossover and mutation operators are often times necessary
+% \cite{Beligiannis2009}.
+
+%%% Offspring Selection (OS) %%%
+\subsection{Offspring Selection (OS)}
+
+%%% Selection Pressure %%%
+\subsection{Selection Pressure}
+
+%%% Parallel Genetic Algorithms %%%
+\subsection{Parallel Genetic Algorithms}
+
 
 %% Discussion --------------------------------------------------------------- %%
 \section{Discussion}
@@ -439,7 +508,13 @@ To do.
 
 %% Future Work -------------------------------------------------------------- %%
 \section{Future Work}
-To do.
+The findings from this work will serve as the basis for the author's master's
+thesis, in which a genetic algorithm for a special timetabling problem will be
+developed.
+The examinations conducted in this paper provide information about the most
+frequently used techniques of genetic search within the timetabling domain,
+which will serve as a reference point for selecting the most appropriate
+genetic methods for the algorithm to be developed.
 
 
 %% ACKNOWLEDGEMENTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
