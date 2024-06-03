@@ -270,31 +270,49 @@ domain-specific representation \cite{Affenzeller2009}.
 The following paragraphs present some well-known encodings.
 
 \subsubsection{Binary Encoding}
-\cite{Katoch2021}
-\cite{Affenzeller2009}
+Binary encoding is a method in which chromosomes are represented as strings
+of binary digits, i.e. an array of 0s and 1s \cite{Katoch2021}.
+Each unit of information (also called a \textit{gene}) corresponds to one binary
+digit (\textit{bit}).
+%
+The main advantage of binary encoding is the ability to use common and
+well-researched crossover and mutation operators \cite{Katoch2021}.
+However, these strategies lead to invalid representations, which
+would need to be repaired. Such repair strategies are used in practice
+but pose the risk of introducing too much genetic information which is from
+neither of the parents \cite{Affenzeller2009}.
+%
+Furthermore, utilizing this encoding requires converting solution candidates
+into binary form \cite{Katoch2021}. Depending on the complexity of the problem
+this might not be feasible and thus require a different encoding.
 
-% Mention that decimal and hexadecimal encoding are analogous to binary encoding
-% and they just use other "values" \cite{Katoch2021}
-
+Other well-known encoding schemes are \textit{decimal} and \textit{hexadecimal}
+encoding. They work analogous to binary encoding except for using decimal and
+hexadecimal digits respectively \cite{Katoch2021}.
 
 \subsubsection{Value Encoding}
-\cite{Katoch2021}
-% similar to binary encoding, but the values can be real nubers, integers
-% or characters
-
+Value encoding is similar to binary encoding, as it also represents chromosomes
+as strings of values. In contrast to binary encoding, these values can be
+floating point numbers, integers or characters \cite{Katoch2021}.
+This encoding scheme is mainly used for finding the optimal weights in a
+neural network \cite{Katoch2021}.
 
 \subsubsection{Permutation Encoding}
-\cite{Katoch2021}
+The permutation encoding method is commonly used in ordering problems
+\cite{Katoch2021}. Similar to the encodings mentioned before, a chromosome
+is made up of an array of values, but as the name suggests, the position in
+the array encodes the order of the values in the context of an ordering problem
+\cite{Katoch2021,Affenzeller2009}. Given that the objects of the ordering
+problem are unique, this implies that the values in the array are unique too
+\cite{Affenzeller2009}.
 
-
-\subsubsection{\enquote{Matrix Encoding}}
-% In quotes, because it's not an actual encoding. It is more what the encoding
-% represents - namely a matrix.
-% depending on the meaning of the encoded data, an encoded matrix could
-% be interpreted as permutation encoding or
-% Matrices can be used to encode the adjacency matrix/representation of
-% ordering problems \cite{Affenzeller2009}.
-
+\subsubsection{Matrix Encoding}
+Matrix encoding is a technique used in genetic algorithms where solutions are
+represented as matrices (two-dimensional arrays) rather than as one-dimensional
+arrays. This encoding is particularly useful for problems that
+naturally map to a two-dimensional structure, such as scheduling, graphs
+(as adjacency matrix) layout design, or certain combinatorial problems
+\cite{Affenzeller2009}.
 
 
 

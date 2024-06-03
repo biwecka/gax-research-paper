@@ -3117,12 +3117,14 @@
           EngageCSEdu. \ifx\@acmDOI\@empty\else\@formatdoi{\@acmDOI}\fi
           \ACM@linecountR}%
       \else
-        \fancyhead[LE]{\ACM@linecountL\@headfootfont
-          \acmConference@shortname,
-          \acmConference@date, \acmConference@venue}%
-        \fancyhead[RO]{\@headfootfont
-          \acmConference@shortname,
-          \acmConference@date, \acmConference@venue\ACM@linecountR}%
+        % MODIFICATION: Commenting this out removes the conference information
+        %               from the header.
+        % \fancyhead[LE]{\ACM@linecountL\@headfootfont
+        %   \acmConference@shortname,
+        %   \acmConference@date, \acmConference@venue}%
+        % \fancyhead[RO]{\@headfootfont
+        %   \acmConference@shortname,
+        %   \acmConference@date, \acmConference@venue\ACM@linecountR}%
        \fi
     \fi
   \fi
