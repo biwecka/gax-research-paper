@@ -378,19 +378,48 @@ rank, tournament, Boltzmann, and stochastic universal sampling
 The following sections present a brief overview of selected methods.
 
 \subsubsection{Roulette Wheel}
-See \cite{Affenzeller2009} and \cite{Katoch2021}.
+The roulette wheel selection method is also called proportional selection
+and works by assigning each individual a probability for reproduction according
+to its fitness relative to the whole population \cite{Affenzeller2009}.
+The expected value of the $i$-th chromosome to be selected for reproduction
+is therefore $p_i = \frac{f_i}{\overline{f}}$ with $f_i$ denoting the fitness
+of the $i$-th chromosome and $\overline{f}$ representing the average fitness
+of all individuals in the population \cite{Affenzeller2009}.
+\enquote{Therefore, each individual of the population is represented by a
+space proportional to its fitness}\cite{Affenzeller2009} on an imaginary
+roulette wheel.
+\enquote{This wheel is then rotated randomly to select specific solutions that
+will participate in formation of the next generatoin}\cite{Katoch2021}.
 
-\subsubsection{Tournament}
-See \cite{Affenzeller2009} and \cite{Katoch2021}.
-
-\subsubsection{Rank}
+\subsubsection{Rank Selection}
+\enquote{Rank selection is the modified form of Roul-ette Wheel selection.
+It utilizes the ranks instead of fitness value}.
 See \cite{Affenzeller2009}.
+A possible approach of realizing this selection method is by ordering the
+individuals according to their fitness and add copies of individuals in a way
+that the best individual receives a pre-determined multiple number of copies
+the worst one receives \cite{Affenzeller2009}.
+
+Using this selection strategy reduces the dominating effect of outstanding fit
+individual, but in turn distorts the difference between similarly fit
+individuals, which increases the selection pressure in stagnant populations
+\cite{Affenzeller2009}.
+Compared to Roulette Wheel selection it reduces the chances of premature
+convergence towards a local optimum \cite{Katoch2021}.
+
+\subsubsection{Tournament Selection}
+There are numerous variants of this selection method \cite{Affenzeller2009}.
+The most common one is $k$-tournament selection where $k$ individuals are
+randomly selected from a population and the fittest individual of the selected
+ones is considered for reproduction \cite{Affenzeller2009}.
+By choosing the tournament size $k$ appropriately, the selection pressure
+can be easily scaled \cite{Affenzeller2009}.
 
 % \subsubsection{Bolzmann}
 % See \cite{Katoch2021}.
 
-\subsubsection{Comparison of selection techniques}
-See table 3 in \cite{Katoch2021}
+% \subsubsection{Comparison of selection techniques}
+% See table 3 in \cite{Katoch2021}
 
 %%% Crossover %%%
 \subsection{Crossover}
@@ -469,6 +498,7 @@ algorithms:
 
 \subsubsection{Elitism}
 \cite{Affenzeller2009}
+\cite{Katoch2021} (under Boltzmann selection)
 
 \subsubsection{Delete-$n$-last}
 \cite{Affenzeller2009}
