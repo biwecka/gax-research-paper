@@ -430,25 +430,62 @@ certain crossover operators may not be compatible with some encodings in context
 of the problem at hand \cite{Affenzeller2009}.
 
 \subsubsection{Single Point}
-See \cite{Affenzeller2009}.
+The single point crossover method cuts each parent chromosomes into a head and
+tail section. For this a random position is chosen at which both chromosomes
+are cut \cite{Affenzeller2009}.
+For a chromosome using binary encoding for example, this translates to
+splitting the array used to represent the chromosome into two sections.
+The tail sections are then swapped producing two new individuals
+\cite{Affenzeller2009}.
 
 \subsubsection{Multiple Point}
-See \cite{Affenzeller2009} and \cite{Katoch2021}.
+Similar to the single point crossover method, the multipoint crossover
+cuts the parent chromosomes into sections. In contrast to the single point
+crossover, and as the name suggests, the multipoint crossover method
+uses multiple random cuts instead of a single one
+\cite{Affenzeller2009,Katoch2021}. 
 
-\subsubsection{Uniform Point}
-See \cite{Affenzeller2009}.
+\subsubsection{Uniform Crossover}
+Uniform crossover uses a randomly generated crossover mask, which contains
+information about what parent chromosome provides certain genes to the
+offspring \cite{Affenzeller2009}. This information could for example be:
+\enquote{the first and second gene (e.g. first and second value in the array)
+are taken from the first parent, the third gene is taken from the second
+parent}.
+To yield two children from the crossover operation, the mask can be inverted.
+This process is equal to randomly swapping genes (at the same position) between
+the parents and taking the resulting chromosomes as offspring \cite{Katoch2021}.
+
 
 \subsubsection{Partially matched crossover}
-See \cite{Katoch2021}.
+Partially matched crossover is the most commonly used crossover operator,
+as it performs better than most of the other operators \cite{Katoch2021}.
+This crossover technique works by randomly choosing a continuous part of genes
+from one parent, and swapping it with the corresponding genes (at the same
+position) from the other parent chromosome \cite{Katoch2021}.
+The left out genes are simply copied to the offspring chromosomes, except of
+genes with values which are contained in the parts that were swapped between
+the parents. The swapped section of genes denotes a mapping which is used to
+map these values to the offspring chromosomes instead of simply copying them
+\cite{Katoch2021}.
+
+\begin{figure}[h]
+  \includegraphics[scale=0.14]{assets/partially-matched-crossover.png}
+  \caption{Partially matched crossover visualization \cite{Katoch2021}}
+  \Description{Visualization of partially matched crossover operation}
+\end{figure}
+
 
 \subsubsection{Order crossover}
-See \cite{Katoch2021}.
+Order crossover copies one (or more) parts of the parent to the offspring
+and fills the remaining space with genes from the respective present, which
+are not present in the copied section \cite{Katoch2021}.
 
-\subsubsection{Shuffle crossover}
-See \cite{Katoch2021}.
+% \subsubsection{Shuffle crossover}
+% See \cite{Katoch2021}.
 
-\subsubsection{Comparison of different crossover techniques}
-See table 4 \cite{Katoch2021}.
+% \subsubsection{Comparison of different crossover techniques}
+% See table 4 \cite{Katoch2021}.
 
 %%% Mutation %%%
 \subsection{Mutation}
@@ -466,13 +503,23 @@ Well-known mutation operators are displacement, simple inversion and scramble
 mutation.
 
 \subsubsection{Displacement Mutation (DM)}
-See \cite{Katoch2021}.
+The displacement mutation operator selects a random section from a chromosome
+and moves it to another position on the chromosome \cite{Katoch2021}.
+This operation does not change the sequence of the genes not included in the
+moved section.
 
 \subsubsection{Simple Inversion Mutation (SIM)}
-See \cite{Katoch2021}.
+For simple inversion mutation a random section is selected from a chromosome.
+The order of the genes in this section is then reversed \cite{Katoch2021}.
+This mutation can be further enhanced by also moving the section to another
+position within the chromosome (similar to displacement mutation)
+\cite{Katoch2021}.
 
 \subsubsection{Scramble Mutation (SM)}
-See \cite{Katoch2021}.
+The scramble mutation is very similar to the simple inversion mutation with the
+single difference of not inverting but shuffling the genes in the randomly
+selected part of the chromosome \cite{Katoch2021}.
+
 
 %%% Evaluation %%%
 \subsection{Evaluation}
