@@ -80,7 +80,7 @@
 %% The abstract is a short summary of the work to be presented in the
 %% article.
 \begin{abstract}
-Empty
+Todo!
 \end{abstract}
 
 
@@ -278,9 +278,9 @@ digit (\textit{bit}).
 The main advantage of binary encoding is the ability to use common and
 well-researched crossover and mutation operators \cite{Katoch2021}.
 However, these strategies lead to invalid representations, which
-would need to be repaired. Such repair strategies are used in practice
-but pose the risk of introducing too much genetic information which is from
-neither of the parents \cite{Affenzeller2009}.
+would need to be repaired \cite{Beligiannis2009}. Such repair strategies are
+used in practice but pose the risk of introducing too much genetic information
+which is from neither of the parents \cite{Affenzeller2009,Beligiannis2009}.
 %
 Furthermore, utilizing this encoding requires converting solution candidates
 into binary form \cite{Katoch2021}. Depending on the complexity of the problem
@@ -542,19 +542,46 @@ algorithms:
 
 \subsubsection{Generational Replacement}
 \cite{Affenzeller2009}
+As the name already suggests, the generational replacement strategy simply
+replaces the current population with the newly created offspring.
+This process may result in a decrease of the fitness of the fittest individual
+in the population at some stages of evolution \cite{Affenzeller2009}.
 
 \subsubsection{Elitism}
-\cite{Affenzeller2009}
-\cite{Katoch2021} (under Boltzmann selection)
+With an elitism method of generation replacement, the best individual
+(or the $n$ best individuals) of the previous generation are retained for
+the next generation \cite{Affenzeller2009, Katoch2021}.
+This theoretically allows individuals to be immortal and might lead to
+premature convergence \cite{Affenzeller2009}.
+The special case of only retaining the best individual is also called
+\enquote{golden cage model} ($n$-elitism with $n = 1$) \cite{Affenzeller2009}.
+In case the mutation operator is applied to the elite individuals to prevent
+premature convergence, the replacement strategy is called \enquote{weak elitism}
+\cite{Affenzeller2009}.
 
 \subsubsection{Delete-$n$-last}
-\cite{Affenzeller2009}
+The $n$ weakest individuals are replaced by $n$ descendants
+\cite{Affenzeller2009}. If $n$ is much smaller than the population size, this
+strategy is known as steady-state replacement scheme \cite{Affenzeller2009}.
+For $n = 1$, the changes between the old and new generations are minimal, while
+choosing $n$ equal to the size of the population represents the previously
+discussed generational replacement strategy \cite{Affenzeller2009}.
+
 
 \subsubsection{Delete-$n$}
-\cite{Affenzeller2009}
+In contrast to the delete-n-last replacement strategy, this approach replaces
+$n$ arbitrarily chosen individuals from the old generation rather than the
+weakest ones \cite{Affenzeller2009}.
+While this reduces the convergence speed of the algorithm, it also helps to
+avoid premature convergence, balancing between elitism and weak elitism
+\cite{Affenzeller2009}.
 
 \subsubsection{Tournament Replacement}
-\cite{Affenzeller2009}
+Tournament replacement is similar to the equally named selection strategy.
+In this replacement scheme competitions are run between sets of individuals
+from the old population and their offspring \cite{Affenzeller2009}.
+The winners of these tournaments become part of the new population
+\cite{Affenzeller2009}.
 
 
 %%% Termination %%%
@@ -572,25 +599,201 @@ generations \cite{Carr2014}.
 
 %% Advanced Techniques ------------------------------------------------------ %%
 \section{Advanced Techniques}
+In the field of genetic programming, it is common practice to adapt existing
+methods to fit one's own use case. This has led to a steady development of new
+approaches to improve genetic search in general.
+While it is beyond the scope of this paper to provide an exhaustive overview
+of the many branches of advanced genetic search,
+the following sections present a selection of important in regard to solving
+timetabling problems.
 
 %%% Direct and Indirect Encoding %%%
 \subsection{Direct and Indirect Encoding}
+Genetic algorithms can be classified into two primary categories based on the
+employed encoding scheme: \textit{direct} and \textit{indirect}
+\cite{Thanh2007}.
+In a direct encoding, the chromosome encodes all features of a solution
+candidate, meaning that the whole search space is encoded
+\cite{Thanh2007,Goos2002}.
+Depending on the problem domain, this means, that chromosomes may also
+represent invalid solution candidates. Therefore, direct encodings are prone
+to hard constraint violations on crossover and mutation operations, which
+requires applying additional mechanisms to find feasible solutions
+\cite{Goos2002}.
+One possible solution is to repair these invalid
+chromosomes by applying a repair function that uses domain-specific
+heuristics to transform the chromosome to a valid state, with the downside of
+introducing genetic information not related to either of the parents
+\cite{Beligiannis2009,Affenzeller2009}.
 
-%%% Non-standard genetic operators %%%
-\subsection{Non-standard genetic operators}
+In contrast to a direct representation, an indirect (or \textit{implicit})
+encoding only \textit{partially} encodes a solution candidate \cite{Thanh2007}.
+One advantage of not encoding all information of a solution is, that
+this restricts the search space the algorithm has to explore \cite{Goos2002}.
+Furthermore, by using an indirect encoding, compliance with hard (and even
+soft) constraints can be guaranteed, if the encoding is designed to
+only represent valid solutions \cite{Goos2002}.
 
-% Especiall in timetabling problems, where a customized matrix encoding is
-% used, custom crossover and mutation operators are often times necessary
-% \cite{Beligiannis2009}.
+School timetabling problems are highly constrained, hence indirect
+encodings have been successfully applied to such problems \cite{Goos2002}.
 
-%%% Offspring Selection (OS) %%%
-\subsection{Offspring Selection (OS)}
+
+%%% Custom genetic operators %%%
+\subsection{Custom genetic operators}
+Especially for solving more complex solutions, like creating the forementioned
+school timetable with many constraints, customized variants of genetic
+operators may be necessary \cite{Beligiannis2009,Almeida2015}.
+An example for such a custom operator is presented in \cite{Beligiannis2009}.
+Their crossover operator is derived from a typical uniform crossover, but
+it is adapted to the problem domain to not cause problems with a teacher's
+schedule \cite{Beligiannis2009}.
+Another potential application of such custom genetic operators could also be
+the prevention of producing infeasible solutions, when using encoding schemes
+that do not rule such invalid chromosomes out by design \cite{Elliman1995}.
+%
+Similarly to the custom crossover operator mentioned above,
+mutation operators must also be adapted according to the chosen encoding
+scheme \cite{Almeida2015}.
+
+% \cite[8]{Affenzeller2009}
+% You have to know what you do \cite{???}.
+
 
 %%% Selection Pressure %%%
 \subsection{Selection Pressure}
+In the context of genetic algorithms, selection pressure refers to the
+intensity with which the algorithm favors the fittest individuals during the
+selection process for reproduction \cite{back1994selective, Affenzeller2009}.
+%
+When selection pressure is high, the algorithm strongly favors the best
+individuals in the population. These individuals are more likely to be selected
+for reproduction, leading to a quicker convergence towards optimal or
+near-optimal solutions. However, if the pressure is too high, it might cause
+premature convergence, where the population loses diversity and gets stuck in
+local optima \cite{back1994selective}.
+
+Conversely, when selection pressure is low, the algorithm less strongly favors
+the fittest individuals. This allows for a more diverse set of individuals
+to be selected for crossover. This helps to maintain genetic diversity within
+the population and can avoid premature convergence. However, if the pressure
+is too low, the algorithm may converge very slowly or struggle to find optimal
+solutions efficiently \cite{back1994selective}.
+
+Consequently, the selection pressure generated by the utilized selection method
+is always a compromise between convergence speed and avoiding premature
+convergence. It appears, that a dynamic intervention in the evolutionary process
+to adapt the selection process and the associated selection pressure would
+result in an improvement of the algorithm. This is exactly the approach taken
+by the offspring selection method explained in the following paragraph.
+
+
+%%% Offspring Selection (OS) %%%
+\subsection{Offspring Selection}
+Offspring selection (OS) is a self-adaptive selection pressure steering method
+\cite{Affenzeller2009}.
+Contrary to what the name suggests, this method does not replace previously
+presented selection methods, such as roulette-wheel or linear-rank schemes.
+Instead, a second selection step is introduced \cite{Affenzeller2009}.
+After the first selection step has been executed (for example roulette-wheel
+selection) and the crossover operation has been applied to the selected
+chromosomes, a further selection -- the offspring selection -- is applied
+\cite{Affenzeller2009}.
+
+The offspring selection considers the fitness of the individuals resulting from
+crossover.
+To assure the genetic search mainly progresses with successful offspring,
+the newly introduced selection step guarantees that a sufficient number of
+children surpass their parents' fitness \cite{Affenzeller2009}.
+The success ratio ($SuccRatio \in [0, 1]$) controls the proportion of
+individuals in the next generation, with better fitness than their parents
+\cite{Affenzeller2009}.
+
+This inevitably leads to the following question:
+\enquote{Is a child better than its parents, if it surpasses the fitness of the
+weaker parent, the better parent, or some kind of weighted average of both?}
+\cite{Affenzeller2009}.
+To answer this question the offspring selection method introduces a comparison
+factor ($CompFactor \in [0, 1]$), inspired by simulated annealing. This factor
+sets a fitness threshold between the worse and better parent. Early in the
+process, offspring only need to surpass the fitness of the weaker parent to
+be considered \textit{better}. As the algorithm progresses, this threshold
+increases towards the fitness of the better parent, facilitating a broader
+search initially and a more focused search later \cite{Affenzeller2009}.
+% affenzeller s.70
+The gradual increase of the comparison factor adjusts the selection pressure
+throughout the genetic search process, starting with a low selection pressure
+to prevent premature convergence and steadily increasing the pressure to
+not suffer from long runtimes until the search converges \cite{Affenzeller2009}.
+
 
 %%% Parallel Genetic Algorithms %%%
 \subsection{Parallel Genetic Algorithms}
+Genetic algorithms are well suited for parallelization. There are various
+methods of implementing these, some of which require fundamental changes to the
+algorithm and others do not \cite{Affenzeller2009}.
+%
+Concepts for parallel genetic algorithms fall into three categories:
+global parallelization, coarse-grained parallel GAs and fine-grained parallel
+GAs. The most popular for practical applications is the coarse-grained model,
+also known as the island model \cite{Affenzeller2009}.
+
+\subsubsection*{Global Parallelization}
+In global parallelization, a single population is used, and selection involves
+all individuals. This method retains the same qualitative properties as a
+sequential GA, with the primary parallelized operation being the evaluation of
+individual fitness. A master node distributes and collects workloads from slave
+processors, making this model efficient when fitness evaluation is the primary
+runtime bottleneck \cite{Affenzeller2009}.
+\begin{figure}[h]
+  \includegraphics[scale=0.22]{assets/parallel-ga-global.png}
+  \caption{
+    Global parallelization: Single population (left) and the corresponding
+    master-slave model (right) \cite{Affenzeller2009}.
+  }
+  \Description{Visualization of global parallelization concept}
+\end{figure}
+
+\subsubsection*{Coarse-grained parallel genetic algorithms}
+Coarse-grained parallel GAs divide the population into subpopulations
+(called \textit{islands} or \textit{demes}) that evolve mostly in isolation,
+occasionally exchanging individuals during migration phases.
+This model introduces significant changes to the algorithm structure,
+differing from sequential genetic algorithms \cite{Affenzeller2009}.
+The main idea is that isolated demes will converge to different regions of the
+solution space, with migration and recombination combining relevant solution
+parts \cite{Affenzeller2009}.
+Coarse-grained parallel genetic algorithms are widely used due to their
+ease of implementation and therefore the most popular method of
+parallelizing genetic algorithms \cite{Affenzeller2009}.
+\begin{figure}[h]
+  \includegraphics[scale=0.24]{assets/parallel-ga-coarse.png}
+  \caption{
+    Population structure of a coarse-grained parallel genetic algorithm
+    \cite{Affenzeller2009}.
+  }
+  \Description{
+    Visualization of the population structure in a coarse-grained parallel
+    genetic algorithm
+  }
+\end{figure}
+
+\subsubsection*{Fine-grained parallel genetic algorithms}
+Fine-grained parallel genetic algorithms involve many small demes which are
+part of one spatially distributed population \cite{Affenzeller2009}.
+The idea behind this is that individuals are spread throughout the
+global population like molecules in a diffusion process, with recombination
+restricted to local neighborhoods \cite{Affenzeller2009}.
+\begin{figure}[h]
+  \includegraphics[scale=0.24]{assets/parallel-ga-fine.png}
+  \caption{
+    Population structure of a fine-grained parallel genetic algorithm
+    with a cellular model \cite{Affenzeller2009}.
+  }
+  \Description{
+    Visualization of the population structure in a fine-grained parallel
+    genetic algorithm using a cellular model
+  }
+\end{figure}
 
 
 %% Discussion --------------------------------------------------------------- %%

@@ -1,2 +1,6 @@
 {"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qprintacmref=false printfolios=true [1]\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Qprintacmref=false printfolios=true [1]\\E$"}
+{"rule":"THE_SUPERLATIVE","sentence":"^\\QWith an elitism method of generation replacement, the best individual (or the \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q best individuals) of the previous generation are retained for the next generation \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"THE_SUPERLATIVE","sentence":"^\\QThe \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q weakest individuals are replaced by \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q descendants \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"AFFORD_VBG","sentence":"^\\QSimilarly, mutation operators must be adapted based on the chosen encoding scheme \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"AFFORD_VBG","sentence":"^\\QSimilarly to the custom crossover operator mentioned above, mutation operators must also be adapted according to the chosen encoding scheme \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}

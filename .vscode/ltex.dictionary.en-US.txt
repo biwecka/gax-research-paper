@@ -4,3 +4,5 @@ metaheuristic
 Tabu
 Metaheuristics
 encodings
+GAs
+demes
