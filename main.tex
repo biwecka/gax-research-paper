@@ -184,14 +184,70 @@ imitating the Darwinian theory of survival of the fittest \cite{Katoch2021}.
 
 %% Methods ------------------------------------------------------------------ %%
 \section{Methods}
-This paper specifically focuses on the application of genetic algorithms
-in the domain of educational timetabling and not timetabling or scheduling
-problems in general.
-To accomplish this, a thorough search among recent and early publications on
-this topic has been conducted, to create a representative overview of the most
-important concepts of genetic search used in the field of timetabling.
-After an introduction of the basic and some advanced concepts of genetic
-algorithms, the research results will be visualized and discussed.
+Veröffentlichungen der jüngeren Vergangenheit, insbesondere Survey Paper in
+diesem Feld, welche Lösungsansätze für educational timetabling behandeln,
+zeigten, dass die Populatität von Populations-basierte Algorithmen
+wie genetische Algorithmen abgenommen hat. Dadurch hat sich im Bereich der
+genetischen Algorithmen eine Forschungslücke aufgetan.
+Außerdem ist dies kein "starker Indikator" dafür, dass diese Art von Algorithmen
+grundsätzlich nicht geeignet für Timetabling Probleme ist, denn in diesem
+Umfeld werden oft einfach die Algorithmen angewand, mit denen die jeweilige
+Forschungsgruppe bereits Erfahrung gesammelt hat.
+
+Das Ziel dieser Arbeit ist, die bisherige Verwendung von genetischen Algorithmen
+speziell im Bereich des Educational Timetablings aufzuzeigen und übersichtlich
+darzustellen.
+Grundlage dessen ist eine umfassende systematische Literaturrecherche die
+durchgeführt wurde, um viele relevante Anwendungen von genetischen Algorithmen
+in der Domäne des Edu. Timetabling zu finden und anhand wesentlicher
+Eigenschaften einzuordnen.
+Dabei wurde auf verschiedene wissenschaftliche Datenbanken wie IEEE Xplore,
+ACM Digital Library, SpringerLink und Google Scholar zurückgegriffen.
+Die Suchkriterien umfassten Schlüsselbegriffe wie "genetic algorithm",
+"educational timetabling", "timetabling", "scheduling", "heuristic" and
+"metaheuristic".
+Es wurde darauf geachtet, dass vorzugsweise aktuelle Veröffentlichungen, jedoch
+auch ältere, etablierte Studien und Paper berücksicktigt wurden, um einen
+umfassenden Überblick über die Entwicklung und den Einsatz genetischer
+Algorithmen in diesem Feld zu erhalten und keine bereits eingesetzten
+Methoden aufgrund ihres Alters auszuschließen.
+Hauptaugenmerk war nichts desto trotz die ausführliche Beschreibung des
+Algorithmus, um dessen Eigenschaften möglichst ausführlich zu dokumentieren.
+Dieses Kriterium ist in vielen Veröffentlichungen nicht gegeben, vor allem der
+Algorithmus bewusst nicht veröffentlicht wurde und deshalb nur auf dessen
+Ergebnisse eingegangen wird.
+
+Die Gliederung der vorliegenden Arbeit ist wie folgt:
+Zunächst werden die Grundlagen von genetischen Algorithmen und zusätzlich
+ausgewählte erweiterte Konzepte behandelt. Diese Einführung dient der besseren
+Einordnung der später vorgestellten Algorithmen und deren Eigenschaften.
+Die vorgestellten Methoden sind und können nicht erschöpfend sein und das
+breite Feld der genetischen Algorithmen vollumfänglich behandeln.
+
+Danach werden die in der Literaturrecherche herausgesuchten Algorithmen
+anhand eines morphologischen Kastens genannt und deren wesentliche
+Eigenschaften erarbeitet.
+Dies ermöglicht einerseits eine Übersicht über den aktuellen Stand der Forschung
+bezüglich genetischer Algorithmen für Educational Timetabling und zeigt
+zusätzlich neue Forschungsansätze und -möglichkeiten auf, welche sich durch
+nicht verwendete Kombinationen aus den Eigenschaften der Algorithmen ergeben.
+Durch die systematische Analyse und Darstellung im morphologischen Kasten sollen
+Wissenschaftler und Praktiker inspiriert werden, innovative und effektive
+Lösungsansätze zu entwickeln und bestehende Methoden weiterzuentwickeln.
+
+Abschließend wird über übergeordnete Erkentnisse aus der Literaturrecherche
+eine Aussicht auf den potentiellen Erfolg von genetischen Algorithen
+in zukünftiger Forschung gegeben.
+
+
+% This paper specifically focuses on the application of genetic algorithms
+% in the domain of educational timetabling and not timetabling or scheduling
+% problems in general.
+% To accomplish this, a thorough search among recent and early publications on
+% this topic has been conducted, to create a representative overview of the most
+% important concepts of genetic search used in the field of timetabling.
+% After an introduction of the basic and some advanced concepts of genetic
+% algorithms, the research results will be visualized and discussed.
 
 % Do I need to include "how" I found the papers?
 
@@ -798,7 +854,38 @@ restricted to local neighborhoods \cite{Affenzeller2009}.
 
 %% Discussion --------------------------------------------------------------- %%
 \section{Discussion}
-To do.
+In diesem Kapitel werden die Ergebnisse der systematischen Literaturanalyse
+vorgestellt und diskutiert. Der Fokus liegt dabei auf der Darstellung der
+verschiedenen genetischen Algorithmen und der Darstellung derer Eigenschaften
+in einem morphologischen Kasten. Dabei wird untersucht, welche Kombinationen
+von Eigenschaften bisher erfolgreich angewendet wurden, welche bis dato
+weniger Aufmerksamkeit erfuhren und welche neuen Kombinationen Potenzial für
+zukünftige Forschung bieten.
+
+Die Tabelle xyz zeigt die im Rahmen der Literaturrecherche betrachteten
+Algorithmen und deren wesentliche Charakteristika:
+% Morphologischer Kasten -> hier einfügen
+
+% Trends auswerten:
+% - häufigste selektionsmethode
+% - beliebtestes encoding
+% - parallelität spielt kaum ein Thema -> birgt aber ein riesen potential (GPU)
+  % potenzial der besseren parallelisierung ggü von populären integer
+  % programming methoden. das könnte der game changer sein % gerade bei
+  % parallelisierung mit GPUs
+
+% - Der morphologische Kasten identifiziert verschiedene Kombinationen von
+  % Eigenschaften, die bisher wenig oder gar nicht untersucht wurden.
+  % Insbesondere die Kombination von adaptiven Selektionsmethoden mit
+  % fortschrittlichen Mutationsmechanismen bietet ein großes Potenzial für
+  % zukünftige Forschungen. Diese neuen Ansätze könnten zu effizienteren und
+  % effektiveren Lösungen für das educational timetabling führen.
+  %
+  % +++ und PARALLELISIERUNG !!!
+
+% - Untersuchung der Auswirkung weiterer parameter (Mutationswarhscheinlichkeit
+%   usw. auf den Selection Pressure)
+
 
 %% Conclusion --------------------------------------------------------------- %%
 \section{Conclusion}
