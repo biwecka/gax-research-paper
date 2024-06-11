@@ -4,3 +4,9 @@
 {"rule":"THE_SUPERLATIVE","sentence":"^\\QThe \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q weakest individuals are replaced by \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q descendants \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
 {"rule":"AFFORD_VBG","sentence":"^\\QSimilarly, mutation operators must be adapted based on the chosen encoding scheme \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
 {"rule":"AFFORD_VBG","sentence":"^\\QSimilarly to the custom crossover operator mentioned above, mutation operators must also be adapted according to the chosen encoding scheme \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QDie Tabelle xyz zeigt die im Rahmen der Literaturrecherche betrachteten Algorithmen und deren wesentliche Charakteristika: Morphological box comparing genetic algorithms Problem Encoding Fitness Func.\\E$"}
+{"rule":"EN_COMPOUNDS","sentence":"^\\QMulti-point (cut and splice)\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qand hill climb\\E$"}
+{"rule":"EN_COMPOUNDS","sentence":"^\\QMulti-point\\E$"}
+{"rule":"EN_COMPOUNDS","sentence":"^\\QCustomized multi-point\\E$"}
+{"rule":"EN_COMPOUNDS","sentence":"^\\QMulti-point (directed by constraint violation)\\E$"}

@@ -21,6 +21,7 @@
 %% PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{csquotes}
 \usepackage{fancyhdr}
+\usepackage{changepage}
 
 %% SETTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -59,15 +60,26 @@
 \title{Overview of Genetic Algorithms in Educational Timetabling}
 
 %% AUTHORS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\author{Luca Quaer}
-\email{luca@quaer.net}
+% \author{Luca Quaer}
+% \email{luca@quaer.net}
+
+% \affiliation{
+%   \institution{Wilhelm Büchner Hochschule}
+%   \city{Darmstadt}
+%   \state{Baden-Württemberg}
+%   \country{Germany}
+% }
+
+\author{John Doe}
+\email{john@doe.net}
 
 \affiliation{
-  \institution{Wilhelm Büchner Hochschule}
-  \city{Darmstadt}
-  \state{Baden-Württemberg}
-  \country{Germany}
+  \institution{Massachusetts Institute of Technology}
+  \city{Cambridge}
+  \state{MA 02139}
+  \country{United States of America}
 }
+
 
 %% DATES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \received{20 February 2007}
@@ -80,7 +92,12 @@
 %% The abstract is a short summary of the work to be presented in the
 %% article.
 \begin{abstract}
-Todo!
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
+Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.
+At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd  duo dolores et ea rebum. Stet clita kasd  duo dolores et ea rebum. Stet clita kasd  gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, 
 \end{abstract}
 
 
@@ -103,7 +120,7 @@ Educational timetabling involves creating schedules for educational
 institutions such as schools, colleges, and universities.
 The problem domain can be divided into the following three main problems
 \cite{kingston2013educational,schaerf1999survey}:
-High-School Timetabling (HTT), University Course Timetabling (CTT) and
+High-School Timetabling (HSTP), University Course Timetabling (UCTP) and
 University Examination Timetabling (ETT).
 Although a clear distinction between these three problems is not always
 possible, they generally differ significantly from one another
@@ -184,72 +201,73 @@ imitating the Darwinian theory of survival of the fittest \cite{Katoch2021}.
 
 %% Methods ------------------------------------------------------------------ %%
 \section{Methods}
-Veröffentlichungen der jüngeren Vergangenheit, insbesondere Survey Paper in
-diesem Feld, welche Lösungsansätze für educational timetabling behandeln,
-zeigten, dass die Populatität von Populations-basierte Algorithmen
-wie genetische Algorithmen abgenommen hat. Dadurch hat sich im Bereich der
-genetischen Algorithmen eine Forschungslücke aufgetan.
-Außerdem ist dies kein "starker Indikator" dafür, dass diese Art von Algorithmen
-grundsätzlich nicht geeignet für Timetabling Probleme ist, denn in diesem
-Umfeld werden oft einfach die Algorithmen angewand, mit denen die jeweilige
-Forschungsgruppe bereits Erfahrung gesammelt hat.
+%% Intro
+Publications in the past, especially survey papers, in the field of educational
+timetabling, showed a shift from meta-heuristic methods like genetic algorithms
+towards mathematical optimization methods in the recent years
+\cite{Tan2021}.
+%
+Consequently, a research gap in the field of educational timetabling
+with regard to genetic algorithms opened up.
+%
+This may seem like genetic algorithms are not suitable in this domain,
+but research shows, that genetic algorithms have proven their effectiveness
+in solving timetabling problems \cite{Rezaeipanah2019,Chen2021}.
+%
+The decreasing utilization of genetic algorithms could be the result of
+researchers not using the best algorithm to solve a problem but rather
+methodologies they already have experience with \cite{Ceschia2023}.
 
-Das Ziel dieser Arbeit ist, die bisherige Verwendung von genetischen Algorithmen
-speziell im Bereich des Educational Timetablings aufzuzeigen und übersichtlich
-darzustellen.
-Grundlage dessen ist eine umfassende systematische Literaturrecherche die
-durchgeführt wurde, um viele relevante Anwendungen von genetischen Algorithmen
-in der Domäne des Edu. Timetabling zu finden und anhand wesentlicher
-Eigenschaften einzuordnen.
-Dabei wurde auf verschiedene wissenschaftliche Datenbanken wie IEEE Xplore,
-ACM Digital Library, SpringerLink und Google Scholar zurückgegriffen.
-Die Suchkriterien umfassten Schlüsselbegriffe wie "genetic algorithm",
-"educational timetabling", "timetabling", "scheduling", "heuristic" and
-"metaheuristic".
-Es wurde darauf geachtet, dass vorzugsweise aktuelle Veröffentlichungen, jedoch
-auch ältere, etablierte Studien und Paper berücksicktigt wurden, um einen
-umfassenden Überblick über die Entwicklung und den Einsatz genetischer
-Algorithmen in diesem Feld zu erhalten und keine bereits eingesetzten
-Methoden aufgrund ihres Alters auszuschließen.
-Hauptaugenmerk war nichts desto trotz die ausführliche Beschreibung des
-Algorithmus, um dessen Eigenschaften möglichst ausführlich zu dokumentieren.
-Dieses Kriterium ist in vielen Veröffentlichungen nicht gegeben, vor allem der
-Algorithmus bewusst nicht veröffentlicht wurde und deshalb nur auf dessen
-Ergebnisse eingegangen wird.
-
-Die Gliederung der vorliegenden Arbeit ist wie folgt:
-Zunächst werden die Grundlagen von genetischen Algorithmen und zusätzlich
-ausgewählte erweiterte Konzepte behandelt. Diese Einführung dient der besseren
-Einordnung der später vorgestellten Algorithmen und deren Eigenschaften.
-Die vorgestellten Methoden sind und können nicht erschöpfend sein und das
-breite Feld der genetischen Algorithmen vollumfänglich behandeln.
-
-Danach werden die in der Literaturrecherche herausgesuchten Algorithmen
-anhand eines morphologischen Kastens genannt und deren wesentliche
-Eigenschaften erarbeitet.
-Dies ermöglicht einerseits eine Übersicht über den aktuellen Stand der Forschung
-bezüglich genetischer Algorithmen für Educational Timetabling und zeigt
-zusätzlich neue Forschungsansätze und -möglichkeiten auf, welche sich durch
-nicht verwendete Kombinationen aus den Eigenschaften der Algorithmen ergeben.
-Durch die systematische Analyse und Darstellung im morphologischen Kasten sollen
-Wissenschaftler und Praktiker inspiriert werden, innovative und effektive
-Lösungsansätze zu entwickeln und bestehende Methoden weiterzuentwickeln.
-
-Abschließend wird über übergeordnete Erkentnisse aus der Literaturrecherche
-eine Aussicht auf den potentiellen Erfolg von genetischen Algorithen
-in zukünftiger Forschung gegeben.
+%% What this paper does
+This paper analyzes the current use of genetic algorithms with focus on
+approaches to solve educational timetabling problems.
+% Presenting these results the reader will have a good overview of ...
+%
+The basis for this is a comprehensive systematic literature research that
+was carried out in order to identify as many relevant applications of genetic
+algorithms in the domain of educational timetabling as possible, and
+present their most crucial characteristics.
+%
+Several scientific databases such as IEEE Xplore, ACM Digital Library,
+SpringerLink and Google Scholar were searched with prominent keywords such as
+\enquote{educational timetabling}, \enquote{timetabling}, \enquote{scheduling},
+\enquote{heuristic} and \enquote{meta-heuristic}.
+%
+In order to provide a comprehensive overview of the development and use of
+genetic algorithms in this field, care was taken to give preference to recent
+publications. However, older, established studies and papers were also taken
+into account in order to ensure that no methods already in use were excluded
+only due to their age.
+%
+Nevertheless, the primary objective was to provide a comprehensive and detailed
+description of the algorithms, with the aim of documenting its properties.
+This objective is not consistently met in many publications, particularly
+when the algorithm was deliberately not published and therefore only rough
+details were disclosed and only results have been discussed.
 
 
-% This paper specifically focuses on the application of genetic algorithms
-% in the domain of educational timetabling and not timetabling or scheduling
-% problems in general.
-% To accomplish this, a thorough search among recent and early publications on
-% this topic has been conducted, to create a representative overview of the most
-% important concepts of genetic search used in the field of timetabling.
-% After an introduction of the basic and some advanced concepts of genetic
-% algorithms, the research results will be visualized and discussed.
-
-% Do I need to include "how" I found the papers?
+%% Structure of the paper
+This paper is structured as follows:
+First, the fundamentals of genetic algorithms and selected advanced concepts
+are presented. Introducing some basic concepts serves to better understand the
+properties of the algorithms, which are presented in the discussion section
+of the paper. The selected concepts which are part of the introduction give
+a good overview of genetic search, but cannot be an exhaustive coverage of the
+all developments and research in this field.
+%
+After the introduction, the algorithms identified in the literature research
+are then presented in a morphological box in combination with their most
+important characteristics.
+This provides an overview of the current state of research on genetic algorithms
+for educational timetabling and also highlights possible research approaches
+to be taken, by creating combination of algorithm properties, which have not
+been used in this constellation.
+The systematic analysis and presentation in form of a morphological box is
+intended to inspire practitioners and researchers to develop innovative
+and effective approaches and to further develop existing methods.
+%
+Finally, the overarching findings from the literature research are used to
+assess the potential success of genetic algorithms in future research.
 
 
 %% Basic Concepts ----------------------------------------------------------- %%
@@ -799,7 +817,7 @@ all individuals. This method retains the same qualitative properties as a
 sequential GA, with the primary parallelized operation being the evaluation of
 individual fitness. A master node distributes and collects workloads from slave
 processors, making this model efficient when fitness evaluation is the primary
-runtime bottleneck \cite{Affenzeller2009}.
+runtime bottleneck (see \autoref{tab:parallel-ga-global})\cite{Affenzeller2009}.
 \begin{figure}[h]
   \includegraphics[scale=0.22]{assets/parallel-ga-global.png}
   \caption{
@@ -807,6 +825,7 @@ runtime bottleneck \cite{Affenzeller2009}.
     master-slave model (right) \cite{Affenzeller2009}.
   }
   \Description{Visualization of global parallelization concept}
+  \label{tab:parallel-ga-global}
 \end{figure}
 
 \subsubsection*{Coarse-grained parallel genetic algorithms}
@@ -817,7 +836,7 @@ This model introduces significant changes to the algorithm structure,
 differing from sequential genetic algorithms \cite{Affenzeller2009}.
 The main idea is that isolated demes will converge to different regions of the
 solution space, with migration and recombination combining relevant solution
-parts \cite{Affenzeller2009}.
+parts (see \autoref{tab:parallel-ga-coarse})\cite{Affenzeller2009}.
 Coarse-grained parallel genetic algorithms are widely used due to their
 ease of implementation and therefore the most popular method of
 parallelizing genetic algorithms \cite{Affenzeller2009}.
@@ -831,6 +850,7 @@ parallelizing genetic algorithms \cite{Affenzeller2009}.
     Visualization of the population structure in a coarse-grained parallel
     genetic algorithm
   }
+  \label{tab:parallel-ga-coarse}
 \end{figure}
 
 \subsubsection*{Fine-grained parallel genetic algorithms}
@@ -838,9 +858,10 @@ Fine-grained parallel genetic algorithms involve many small demes which are
 part of one spatially distributed population \cite{Affenzeller2009}.
 The idea behind this is that individuals are spread throughout the
 global population like molecules in a diffusion process, with recombination
-restricted to local neighborhoods \cite{Affenzeller2009}.
+restricted to local neighborhoods (see \autoref{tab:parallel-ga-fine})
+\cite{Affenzeller2009}.
 \begin{figure}[h]
-  \includegraphics[scale=0.24]{assets/parallel-ga-fine.png}
+  \includegraphics[scale=0.24]{assets/parallel-ga-fine.png}c
   \caption{
     Population structure of a fine-grained parallel genetic algorithm
     with a cellular model \cite{Affenzeller2009}.
@@ -849,26 +870,1115 @@ restricted to local neighborhoods \cite{Affenzeller2009}.
     Visualization of the population structure in a fine-grained parallel
     genetic algorithm using a cellular model
   }
+  \label{tab:parallel-ga-fine}
 \end{figure}
 
 
 %% Discussion --------------------------------------------------------------- %%
+\newpage
 \section{Discussion}
-In diesem Kapitel werden die Ergebnisse der systematischen Literaturanalyse
-vorgestellt und diskutiert. Der Fokus liegt dabei auf der Darstellung der
-verschiedenen genetischen Algorithmen und der Darstellung derer Eigenschaften
-in einem morphologischen Kasten. Dabei wird untersucht, welche Kombinationen
-von Eigenschaften bisher erfolgreich angewendet wurden, welche bis dato
-weniger Aufmerksamkeit erfuhren und welche neuen Kombinationen Potenzial für
-zukünftige Forschung bieten.
+This chapter presents and discusses the results of the conducted literature
+analysis. It focuses on presenting the genetic algorithms found in literature
+and their properties in a morphological box, which was chosen to easily
+examine which combinations of traits have been used successfully to date,
+which have received lesser attention, and which new combinations offer potential
+for future research.
 
-Die Tabelle xyz zeigt die im Rahmen der Literaturrecherche betrachteten
-Algorithmen und deren wesentliche Charakteristika:
-% Morphologischer Kasten -> hier einfügen
+\autoref{tab:morph-box} shows the forementioned overview of genetic algorithms
+found in the literature research, and their main characteristics.
+
+% Morphologischer Kasten
+\begin{table*}[]
+\begin{adjustwidth}{-2cm}{-2cm}
+  \centering
+  
+  \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+  \hline
+  % Headline Row
+  \textbf{Problem}&
+  \textbf{Encoding}&
+  \begin{tabular}[c]{@{}l@{}}
+    \textbf{Fitness}\\
+    \textbf{Function}
+  \end{tabular}&
+  \textbf{Selection}&
+  \textbf{Crossover}&
+  \textbf{Mutation}&
+  \begin{tabular}[c]{@{}l@{}}
+    \textbf{Population}\\
+    \textbf{Initialization}
+  \end{tabular}&
+  \textbf{Elitism}&
+  \textbf{Note}&
+  \textbf{Source} \\
+  \hline
+
+  % ----------------------------------------------------------------------------
+  % 1. Row
+    % Problem
+    ETT&
+
+    % Encoding
+    Direct&
+
+    % Fitness Function
+    ?&
+
+    % Selection
+    ?&
+
+    % Crossover
+    \begin{tabular}[c]{@{}l@{}}
+      Custom heuristic\\
+      (ensuring valid\\
+      solutions)
+    \end{tabular}&
+
+    % Mutation
+    \begin{tabular}[c]{@{}l@{}}
+      Custom (prevents\\
+      infeasible results)\\
+    \end{tabular}&
+
+    % Population Initialization
+    \begin{tabular}[c]{@{}l@{}}
+      Heuristic\\
+      (only feasible\\
+      solutions)\\
+    \end{tabular}&
+
+    % Elitism
+    ?&
+
+    % Note
+    Hybrid&
+
+    % Source
+    \cite{Elliman1995} (1995)\\
+
+    \hline
+
+
+  % ----------------------------------------------------------------------------
+  % 2. Row
+    % Problem
+    HSTP&
+
+    % Encoding
+    \begin{tabular}[c]{@{}l@{}}
+      Direct (array)
+    \end{tabular}&
+
+    % Fitness Function
+    \begin{tabular}[c]{@{}l@{}}
+      Penalty points
+    \end{tabular}&
+
+    % Selection
+    \begin{tabular}[c]{@{}l@{}}
+      Roulette wheel
+    \end{tabular}&
+
+    % Crossover
+    \begin{tabular}[c]{@{}l@{}}
+      One-, two-point\\
+      and uniform\\
+      (with repair)
+    \end{tabular}&
+
+    % Mutation
+    \begin{tabular}[c]{@{}l@{}}
+      Hybrid with\\
+      repair function
+    \end{tabular}&
+
+    % Population Initialization
+    \begin{tabular}[c]{@{}l@{}}
+      Random
+    \end{tabular}&
+
+    % Elitism
+    \begin{tabular}[c]{@{}l@{}}
+      Yes
+    \end{tabular}&
+
+    % Note
+    \begin{tabular}[c]{@{}l@{}}
+      Uses domain\\
+      knowledge
+    \end{tabular}&
+
+    % Source
+    \cite{Goos2002} (2002)\\
+
+    \hline
+
+  % ----------------------------------------------------------------------------
+  % 3. Row
+    % Problem
+    UCTP&
+
+    % Encoding
+    \begin{tabular}[c]{@{}l@{}}
+      Permutation\\
+      (indirect)\\
+      (2D matrix)
+    \end{tabular}&
+
+    % Fitness Function
+    \begin{tabular}[c]{@{}l@{}}
+      Custom\\
+      (encoding-based\\
+      metric)
+    \end{tabular}&
+
+    % Selection
+    \begin{tabular}[c]{@{}l@{}}
+      ?
+    \end{tabular}&
+
+    % Crossover
+    \begin{tabular}[c]{@{}l@{}}
+      Two-point
+    \end{tabular}&
+
+    % Mutation
+    \begin{tabular}[c]{@{}l@{}}
+      Random swap
+    \end{tabular}&
+
+    % Population Initialization
+    \begin{tabular}[c]{@{}l@{}}
+      Random\\
+      (with heuristic)
+    \end{tabular}&
+
+    % Elitism
+    \begin{tabular}[c]{@{}l@{}}
+      ?
+    \end{tabular}&
+
+    % Note
+    \begin{tabular}[c]{@{}l@{}}
+      Genetic and\\
+      heuristic\\
+      algorithm
+    \end{tabular}&
+
+    % Source
+    \cite{Thanh2007} (2007)\\
+
+    \hline
+
+  % ----------------------------------------------------------------------------
+  % 4. Row
+    % Problem
+    HSTP&
+
+    % Encoding
+    \begin{tabular}[c]{@{}l@{}}
+      Enumeration\\
+      (direct; \\
+      2D matrix)
+    \end{tabular}&
+
+    % Fitness Function
+    \begin{tabular}[c]{@{}l@{}}
+      Multi objective\\
+      (weighted sum)
+    \end{tabular}&
+
+    % Selection
+    \begin{tabular}[c]{@{}l@{}}
+      Roulette wheel
+    \end{tabular}&
+
+    % Crossover
+    \begin{tabular}[c]{@{}l@{}}
+      Dynamic, cost\\
+      based operators
+    \end{tabular}&
+
+    % Mutation
+    \begin{tabular}[c]{@{}l@{}}
+      Custom
+    \end{tabular}&
+
+    % Population Initialization
+    \begin{tabular}[c]{@{}l@{}}
+      Random
+    \end{tabular}&
+
+    % Elitism
+    \begin{tabular}[c]{@{}l@{}}
+      Yes
+    \end{tabular}&
+
+    % Note
+    \begin{tabular}[c]{@{}l@{}}
+      
+    \end{tabular}&
+
+    % Source
+    \cite{Beligiannis2009} (2009)\\
+
+    \hline
+
+  % ----------------------------------------------------------------------------
+  % 5. Row
+    % Problem
+    HSTP&
+
+    % Encoding
+    \begin{tabular}[c]{@{}l@{}}
+      Decimal\\
+      (direct)
+    \end{tabular}&
+
+    % Fitness Function
+    \begin{tabular}[c]{@{}l@{}}
+      Multi objective\\
+      (weighted sum)
+    \end{tabular}&
+
+    % Selection
+    \begin{tabular}[c]{@{}l@{}}
+      ?
+    \end{tabular}&
+
+    % Crossover
+    \begin{tabular}[c]{@{}l@{}}
+      Custom
+    \end{tabular}&
+
+    % Mutation
+    \begin{tabular}[c]{@{}l@{}}
+      Custom
+    \end{tabular}&
+
+    % Population Initialization
+    \begin{tabular}[c]{@{}l@{}}
+      Random
+    \end{tabular}&
+
+    % Elitism
+    \begin{tabular}[c]{@{}l@{}}
+      ?
+    \end{tabular}&
+
+    % Note
+    \begin{tabular}[c]{@{}l@{}}
+
+    \end{tabular}&
+
+    % Source
+    \cite{Liu2011} (2011)\\
+
+    \hline
+
+  % ----------------------------------------------------------------------------
+  % 6. Row
+    % Problem
+    HSTP&
+
+    % Encoding
+    \begin{tabular}[c]{@{}l@{}}
+      Matrix\\
+      (variable\\
+      length)
+    \end{tabular}&
+
+    % Fitness Function
+    \begin{tabular}[c]{@{}l@{}}
+      2-step\\
+      cost function\\
+    \end{tabular}&
+
+    % Selection
+    \begin{tabular}[c]{@{}l@{}}
+      $t$-tournament
+    \end{tabular}&
+
+    % Crossover
+    \begin{tabular}[c]{@{}l@{}}
+      Multi-point\\
+      (cut and splice)
+    \end{tabular}&
+
+    % Mutation
+    \begin{tabular}[c]{@{}l@{}}
+      Swapping\\
+      (based on\\
+      heuristics)
+    \end{tabular}&
+
+    % Population Initialization
+    \begin{tabular}[c]{@{}l@{}}
+      Random\\
+      (fixed length)
+    \end{tabular}&
+
+    % Elitism
+    \begin{tabular}[c]{@{}l@{}}
+      ?
+    \end{tabular}&
+
+    % Note
+    \begin{tabular}[c]{@{}l@{}}
+      Hyper-\\
+      heuristic
+    \end{tabular}&
+
+    % Source
+    \cite{Raghavjee2015} (2015)\\
+
+    \hline
+
+  % ----------------------------------------------------------------------------
+  % 7. Row
+    % Problem
+    UCTP&
+
+    % Encoding
+    \begin{tabular}[c]{@{}l@{}}
+      Direct
+    \end{tabular}&
+
+    % Fitness Function
+    \begin{tabular}[c]{@{}l@{}}
+      Multi-objective\\
+      (weighted sum)
+    \end{tabular}&
+
+    % Selection
+    \begin{tabular}[c]{@{}l@{}}
+      Tournament
+    \end{tabular}&
+
+    % Crossover
+    \begin{tabular}[c]{@{}l@{}}
+      Uniform
+    \end{tabular}&
+
+    % Mutation
+    \begin{tabular}[c]{@{}l@{}}
+      Random move in\\
+      neighborhood
+    \end{tabular}&
+
+    % Population Initialization
+    \begin{tabular}[c]{@{}l@{}}
+      Random\\
+      (uniform\\
+      distribution)
+    \end{tabular}&
+
+    % Elitism
+    \begin{tabular}[c]{@{}l@{}}
+      ?
+    \end{tabular}&
+
+    % Note
+    \begin{tabular}[c]{@{}l@{}}
+      Hybrid =\\
+      GA + local\\
+      search
+    \end{tabular}&
+
+    % Source
+    \cite{Badoni2015} (2015)\\
+
+    \hline
+
+  % ----------------------------------------------------------------------------
+  % 8. Row
+    % Problem
+    UCTP&
+
+    % Encoding
+    \begin{tabular}[c]{@{}l@{}}
+      Direct\\
+      (3D matrix)
+    \end{tabular}&
+
+    % Fitness Function
+    \begin{tabular}[c]{@{}l@{}}
+      Multi objective\\
+      (weighted sum)
+    \end{tabular}&
+
+    % Selection
+    \begin{tabular}[c]{@{}l@{}}
+      ?
+    \end{tabular}&
+
+    % Crossover
+    \begin{tabular}[c]{@{}l@{}}
+      Custom
+    \end{tabular}&
+
+    % Mutation
+    \begin{tabular}[c]{@{}l@{}}
+      Repair function\\
+      as mutation
+    \end{tabular}&
+
+    % Population Initialization
+    \begin{tabular}[c]{@{}l@{}}
+      Random
+    \end{tabular}&
+
+    % Elitism
+    \begin{tabular}[c]{@{}l@{}}
+      ?
+    \end{tabular}&
+
+    % Note
+    \begin{tabular}[c]{@{}l@{}}
+
+    \end{tabular}&
+
+    % Source
+    \cite{Almeida2015} (2015)\\
+
+    \hline
+
+  % ----------------------------------------------------------------------------
+  % 9. Row
+    % Problem
+    UCTP&
+
+    % Encoding
+    \begin{tabular}[c]{@{}l@{}}
+      Permutation
+    \end{tabular}&
+
+    % Fitness Function
+    \begin{tabular}[c]{@{}l@{}}
+      Weighted\\
+      penalty func.
+    \end{tabular}&
+
+    % Selection
+    \begin{tabular}[c]{@{}l@{}}
+      Roulette wheel
+    \end{tabular}&
+
+    % Crossover
+    \begin{tabular}[c]{@{}l@{}}
+      Cycle cross-\\
+      over
+    \end{tabular}&
+
+    % Mutation
+    \begin{tabular}[c]{@{}l@{}}
+      Swap
+    \end{tabular}&
+
+    % Population Initialization
+    \begin{tabular}[c]{@{}l@{}}
+      Random
+    \end{tabular}&
+
+    % Elitism
+    \begin{tabular}[c]{@{}l@{}}
+      ?
+    \end{tabular}&
+
+    % Note
+    \begin{tabular}[c]{@{}l@{}}
+
+    \end{tabular}&
+
+    % Source
+    \cite{Gomes2016} (2016)\\
+
+    \hline
+
+  % ----------------------------------------------------------------------------
+  % 10. Row
+    % Problem
+    UCTP&
+
+    % Encoding
+    \begin{tabular}[c]{@{}l@{}}
+      Direct
+    \end{tabular}&
+
+    % Fitness Function
+    \begin{tabular}[c]{@{}l@{}}
+      Multi-objective\\
+      (weighted sum)
+    \end{tabular}&
+
+    % Selection
+    \begin{tabular}[c]{@{}l@{}}
+      Custom\\
+      (gender based)
+    \end{tabular}&
+
+    % Crossover
+    \begin{tabular}[c]{@{}l@{}}
+      Single-point
+    \end{tabular}&
+
+    % Mutation
+    \begin{tabular}[c]{@{}l@{}}
+      Custom\\
+      (local search)
+    \end{tabular}&
+
+    % Population Initialization
+    \begin{tabular}[c]{@{}l@{}}
+      ?
+    \end{tabular}&
+
+    % Elitism
+    \begin{tabular}[c]{@{}l@{}}
+      ?
+    \end{tabular}&
+
+    % Note
+    \begin{tabular}[c]{@{}l@{}}
+      Parallel;\\
+      GPU accel-\\
+      erated
+    \end{tabular}&
+
+    % Source
+    \cite{yousef2016gpu} (2016)\\
+
+    \hline
+
+  % ----------------------------------------------------------------------------
+  % 11. Row
+    % Problem
+    UCTP&
+
+    % Encoding
+    \begin{tabular}[c]{@{}l@{}}
+      Indirect\\
+      (2D matrix)
+    \end{tabular}&
+
+    % Fitness Function
+    \begin{tabular}[c]{@{}l@{}}
+      MILP objective\\
+      function
+    \end{tabular}&
+
+    % Selection
+    \begin{tabular}[c]{@{}l@{}}
+      $2$-tournament
+    \end{tabular}&
+
+    % Crossover
+    \begin{tabular}[c]{@{}l@{}}
+      Two-point
+    \end{tabular}&
+
+    % Mutation
+    \begin{tabular}[c]{@{}l@{}}
+      Two-step:\\
+      random swap;\\
+      then heuristic
+    \end{tabular}&
+
+    % Population Initialization
+    \begin{tabular}[c]{@{}l@{}}
+      Random and\\
+      directed
+    \end{tabular}&
+
+    % Elitism
+    \begin{tabular}[c]{@{}l@{}}
+      Yes
+    \end{tabular}&
+
+    % Note
+    \begin{tabular}[c]{@{}l@{}}
+      Hybrid =\\
+      GA + local\\
+      search
+    \end{tabular}&
+
+    % Source
+    \cite{Feng2017} (2017)\\
+
+    \hline
+
+  % ----------------------------------------------------------------------------
+  % 12. Row
+    % Problem
+    UCTP&
+
+    % Encoding
+    \begin{tabular}[c]{@{}l@{}}
+      Direct\\
+      (2D matrix)
+    \end{tabular}&
+
+    % Fitness Function
+    \begin{tabular}[c]{@{}l@{}}
+      Multi-objective\\
+      (soft-constraints\\
+      and robustness)
+    \end{tabular}&
+
+    % Selection
+    \begin{tabular}[c]{@{}l@{}}
+      Roulette wheel\\
+      and random\\
+      (both used)
+    \end{tabular}&
+
+    % Crossover
+    \begin{tabular}[c]{@{}l@{}}
+      Partially matched\\
+      with repair func.\\
+      and hill climb
+    \end{tabular}&
+
+    % Mutation
+    \begin{tabular}[c]{@{}l@{}}
+      Hill climb\\
+      operators (swap\\
+      and move)
+    \end{tabular}&
+
+    % Population Initialization
+    \begin{tabular}[c]{@{}l@{}}
+      Heuristic (const-\\
+      raint program-\\
+      ming based)
+    \end{tabular}&
+
+    % Elitism
+    \begin{tabular}[c]{@{}l@{}}
+      Yes\\
+      (rank)
+    \end{tabular}&
+
+    % Note
+    \begin{tabular}[c]{@{}l@{}}
+
+    \end{tabular}&
+
+    % Source
+    \cite{Akkan2018} (2018)\\
+
+    \hline
+
+  % ----------------------------------------------------------------------------
+  % 13. Row
+    % Problem
+    UCTP&
+
+    % Encoding
+    \begin{tabular}[c]{@{}l@{}}
+      Direct\\
+      (3 matrices)
+    \end{tabular}&
+
+    % Fitness Function
+    \begin{tabular}[c]{@{}l@{}}
+      Multi-objective\\
+      (weighted and\\
+      squared sum)
+    \end{tabular}&
+
+    % Selection
+    \begin{tabular}[c]{@{}l@{}}
+      ?
+    \end{tabular}&
+
+    % Crossover
+    \begin{tabular}[c]{@{}l@{}}
+      Multi-point
+    \end{tabular}&
+
+    % Mutation
+    \begin{tabular}[c]{@{}l@{}}
+      Guided mutation\\
+      with repair func.
+    \end{tabular}&
+
+    % Population Initialization
+    \begin{tabular}[c]{@{}l@{}}
+      Random
+    \end{tabular}&
+
+    % Elitism
+    \begin{tabular}[c]{@{}l@{}}
+      ?
+    \end{tabular}&
+
+    % Note
+    \begin{tabular}[c]{@{}l@{}}
+      Hybrid =\\
+      GA + guided\\
+      search
+    \end{tabular}&
+
+    % Source
+    \cite{Matias2018fair} (2018)\\
+
+    \hline
+
+  % ----------------------------------------------------------------------------
+  % 14. Row
+    % Problem
+    UCTP&
+
+    % Encoding
+    \begin{tabular}[c]{@{}l@{}}
+      Enumeration\\
+      (direct)
+    \end{tabular}&
+
+    % Fitness Function
+    \begin{tabular}[c]{@{}l@{}}
+      Dynamic\\
+      multi-level
+    \end{tabular}&
+
+    % Selection
+    \begin{tabular}[c]{@{}l@{}}
+      Roulette wheel
+    \end{tabular}&
+
+    % Crossover
+    \begin{tabular}[c]{@{}l@{}}
+      Customized\\
+      multi-point
+    \end{tabular}&
+
+    % Mutation
+    \begin{tabular}[c]{@{}l@{}}
+      Custom\\
+      multi-level
+    \end{tabular}&
+
+    % Population Initialization
+    \begin{tabular}[c]{@{}l@{}}
+      Greedy\\
+      (minimizes hard\\
+      constraint\\
+      violations)
+    \end{tabular}&
+
+    % Elitism
+    \begin{tabular}[c]{@{}l@{}}
+      Yes\\
+      ($1+m$)
+    \end{tabular}&
+
+    % Note
+    \begin{tabular}[c]{@{}l@{}}
+
+    \end{tabular}&
+
+    % Source
+    \cite{gozali2020multidepth} (2020)\\
+
+    \hline
+
+  % ----------------------------------------------------------------------------
+  % 15. Row
+    % Problem
+    UCTP&
+
+    % Encoding
+    \begin{tabular}[c]{@{}l@{}}
+      Enumeration\\
+      (direct; 3D\\
+      matrix)
+    \end{tabular}&
+
+    % Fitness Function
+    \begin{tabular}[c]{@{}l@{}}
+      Penalty points\\
+      (for hard\\
+      constraint\\
+      violations)
+    \end{tabular}&
+
+    % Selection
+    \begin{tabular}[c]{@{}l@{}}
+      Roulette wheel
+    \end{tabular}&
+
+    % Crossover
+    \begin{tabular}[c]{@{}l@{}}
+      Multi-point\\
+      (directed by\\
+      constraint\\
+      violation)
+    \end{tabular}&
+
+    % Mutation
+    \begin{tabular}[c]{@{}l@{}}
+      3-step:\\
+      move, swap,\\
+      compare
+    \end{tabular}&
+
+    % Population Initialization
+    \begin{tabular}[c]{@{}l@{}}
+      Greedy
+    \end{tabular}&
+
+    % Elitism
+    \begin{tabular}[c]{@{}l@{}}
+      Yes
+    \end{tabular}&
+
+    % Note
+    \begin{tabular}[c]{@{}l@{}}
+      Parallel\\
+      (island\\
+      model)
+    \end{tabular}&
+
+    % Source
+    \cite{gozali2020islandmodel} (2020)\\
+
+    \hline
+
+
+  % ----------------------------------------------------------------------------
+  % 16. Row
+    % Problem
+    ?&
+
+    % Encoding
+    \begin{tabular}[c]{@{}l@{}}
+      Binary\\
+      (direct)
+    \end{tabular}&
+
+    % Fitness Function
+    \begin{tabular}[c]{@{}l@{}}
+      Custom
+    \end{tabular}&
+
+    % Selection
+    \begin{tabular}[c]{@{}l@{}}
+      ?
+    \end{tabular}&
+
+    % Crossover
+    \begin{tabular}[c]{@{}l@{}}
+      ?
+    \end{tabular}&
+
+    % Mutation
+    \begin{tabular}[c]{@{}l@{}}
+      ?
+    \end{tabular}&
+
+    % Population Initialization
+    \begin{tabular}[c]{@{}l@{}}
+      Random
+    \end{tabular}&
+
+    % Elitism
+    \begin{tabular}[c]{@{}l@{}}
+      Yes\\
+      (best\\
+      $10\%$)
+    \end{tabular}&
+
+    % Note
+    \begin{tabular}[c]{@{}l@{}}
+
+    \end{tabular}&
+
+    % Source
+    \cite{elliot2020enhanced} (2020)\\
+
+    \hline
+
+  % ----------------------------------------------------------------------------
+  % 17. Row
+    % Problem
+    ETP&
+
+    % Encoding
+    \begin{tabular}[c]{@{}l@{}}
+      ?
+    \end{tabular}&
+
+    % Fitness Function
+    \begin{tabular}[c]{@{}l@{}}
+      Multi objective\\
+      (normalized sum)
+    \end{tabular}&
+
+    % Selection
+    \begin{tabular}[c]{@{}l@{}}
+      ?
+    \end{tabular}&
+
+    % Crossover
+    \begin{tabular}[c]{@{}l@{}}
+      ?
+    \end{tabular}&
+
+    % Mutation
+    \begin{tabular}[c]{@{}l@{}}
+      ?
+    \end{tabular}&
+
+    % Population Initialization
+    \begin{tabular}[c]{@{}l@{}}
+      ?
+    \end{tabular}&
+
+    % Elitism
+    \begin{tabular}[c]{@{}l@{}}
+      ?
+    \end{tabular}&
+
+    % Note
+    \begin{tabular}[c]{@{}l@{}}
+
+    \end{tabular}&
+
+    % Source
+    \cite{tung2021genetic} (2021)\\
+
+    \hline
+
+  % ----------------------------------------------------------------------------
+  % 18. Row
+    % Problem
+    UCTP&
+
+    % Encoding
+    \begin{tabular}[c]{@{}l@{}}
+      Dynamic\\
+      length\\
+      (direct)
+    \end{tabular}&
+
+    % Fitness Function
+    \begin{tabular}[c]{@{}l@{}}
+      Amount of\\
+      constraint\\
+      violations
+    \end{tabular}&
+
+    % Selection
+    \begin{tabular}[c]{@{}l@{}}
+      Roulette wheel\\
+      (with fitness\\
+      threshold)
+    \end{tabular}&
+
+    % Crossover
+    \begin{tabular}[c]{@{}l@{}}
+      Single-point
+    \end{tabular}&
+
+    % Mutation
+    \begin{tabular}[c]{@{}l@{}}
+      ?
+    \end{tabular}&
+
+    % Population Initialization
+    \begin{tabular}[c]{@{}l@{}}
+      ?
+    \end{tabular}&
+
+    % Elitism
+    \begin{tabular}[c]{@{}l@{}}
+      Yes\\
+      (during\\
+      select.)
+    \end{tabular}&
+
+    % Note
+    \begin{tabular}[c]{@{}l@{}}
+
+    \end{tabular}&
+
+    % Source
+    \cite{Alnowaini2021} (2021)\\
+
+    \hline
+
+  % ----------------------------------------------------------------------------
+  % 19. Row
+    % Problem
+    UCTP&
+
+    % Encoding
+    \begin{tabular}[c]{@{}l@{}}
+      Binary\\
+      (direct)
+    \end{tabular}&
+
+    % Fitness Function
+    \begin{tabular}[c]{@{}l@{}}
+      Multi-objective\\
+      (weighted sum)
+    \end{tabular}&
+
+    % Selection
+    \begin{tabular}[c]{@{}l@{}}
+      Tournament
+    \end{tabular}&
+
+    % Crossover
+    \begin{tabular}[c]{@{}l@{}}
+      Multi-point
+    \end{tabular}&
+
+    % Mutation
+    \begin{tabular}[c]{@{}l@{}}
+      Custom\\
+      (class mutation)
+    \end{tabular}&
+
+    % Population Initialization
+    \begin{tabular}[c]{@{}l@{}}
+      Heuristic\\
+      (only feasible\\
+      solutions)
+    \end{tabular}&
+
+    % Elitism
+    \begin{tabular}[c]{@{}l@{}}
+      Yes
+    \end{tabular}&
+
+    % Note
+    \begin{tabular}[c]{@{}l@{}}
+      Uses repair\\
+      function
+    \end{tabular}&
+
+    % Source
+    \cite{Mahlous2023} (2023)\\
+
+    \hline
+
+  \end{tabular}
+
+  \caption{
+    Morphological box presenting genetic algorithms with their main
+    characteristics
+  }
+  \label{tab:morph-box}
+\end{adjustwidth}
+\end{table*}
+
 
 % Trends auswerten:
 % - häufigste selektionsmethode
 % - beliebtestes encoding
+% - ... für jede eigenschaft?
 % - parallelität spielt kaum ein Thema -> birgt aber ein riesen potential (GPU)
   % potenzial der besseren parallelisierung ggü von populären integer
   % programming methoden. das könnte der game changer sein % gerade bei
@@ -886,10 +1996,114 @@ Algorithmen und deren wesentliche Charakteristika:
 % - Untersuchung der Auswirkung weiterer parameter (Mutationswarhscheinlichkeit
 %   usw. auf den Selection Pressure)
 
+The application of genetic algorithms in the field of educational timetabling
+has demonstrated significant potential in addressing complex optimization
+problems. This chapter discusses the various methodologies and strategies
+employed in the studies reviewed, highlighting both the prevalent and less
+commonly used techniques. The aim is to provide a comprehensive understanding
+of the current landscape, identify trends, and suggest potential areas for
+future research.
+
+\subsection{Prevalent Techniques}
+Several methods and strategies have emerged as popular choices among researchers
+working on educational timetabling problems. Direct encoding, multi-objective
+fitness functions, and the use of roulette wheel selection are some of the most
+frequently utilized techniques.
+
+\subsubsection{Encodings}
+Direct encoding methods are widely adopted across many studies. This approach
+involves representing the time-table directly in a matrix form, which simplifies
+the application of genetic operators and allows for straightforward
+interpretation and manipulation of solutions.
+Examples include the studies by Thanh (2007), Almeida (2015), and Akkan (2018).
+This prevalence suggests that direct encoding is effective in handling the
+constraints and requirements of timetabling problems.
+
+\subsubsection{Fitness Functions}
+The use of multi-objective fitness functions is another common strategy.
+Researchers often employ a weighted sum approach to balance various objectives,
+such as minimizing the number of constraint violations and maximizing
+robustness. This method is evident in the works of Liu (2011), Badoni (2015),
+and Matias (2018). Multi-objective functions provide a more holistic evaluation
+of solutions, aligning well with the complex nature of educational timetabling,
+which typically involves multiple competing goals.
+
+\subsubsection{Selection Mechanisms}
+Roulette wheel selection is frequently used to guide the evolution of
+solutions, as seen in Goos (2002), Beligiannis (2009), and Gozali (2020).
+This method mimics natural selection by giving higher probabilities of
+selection to better-performing solutions, thus ensuring that high-quality
+timetables are more likely to propagate through successive generations.
+
+\subsubsection{Crossover and Mutation Strategies}
+Custom and multi-point crossover operators are also popular choices.
+These operators are tailored to maintain feasible solutions and introduce
+diversity into the population. For example, Thanh (2007) and Gozali (2020)
+employ two-point and multi-point crossover methods, respectively, while Goos
+(2002) integrates repair functions to handle infeasible offspring.
+
+Similarly, mutation strategies often involve domain-specific heuristics to
+prevent infeasible solutions. Swapping-based mutations, as utilized by
+Liu (2011) and Raghavjee (2015), are common, as they effectively explore the
+solution space without violating hard constraints.
+
+\subsection{Less Utilized Techniques}
+Despite the success of the aforementioned methods, several techniques are
+notably underutilized in the reviewed literature. These include parallelism,
+adaptive/dynamic steering of the evolutionary process, and more sophisticated
+population initialization strategies.
+
+\subsubsection{Parallelism}
+Parallel genetic algorithms offer substantial advantages in terms of
+computational efficiency and solution quality by distributing the workload
+across multiple processors. However, only a few studies, such as those by
+Yousef (2016) and Gozali (2020), have explored this approach. Given the
+increasing availability of parallel computing resources, there is significant
+potential for further research in this area to enhance the scalability and
+performance of GAs in timetabling.
+
+\subsubsection{Adaptive/Dynamic Evolutionary Strategies}
+Adaptive and dynamic evolutionary strategies, which adjust parameters such as
+mutation rates or selection pressures based on the current state of the
+population, can improve convergence rates and solution quality.
+Despite their promise, these methods are rarely implemented in the reviewed
+studies. The lack of adaptive mechanisms suggests an area for future
+exploration, where more responsive algorithms could lead to more efficient
+search processes and better handling of diverse problem instances.
+
+\subsubsection{Population Initialization}
+Most studies rely on random or heuristic-based population initialization
+methods. While these approaches are straightforward and often effective, they
+may not fully exploit the potential of more sophisticated initialization
+strategies. Techniques that incorporate domain knowledge or use advanced
+heuristics could provide a more robust starting point, leading to faster
+convergence and higher-quality solutions. This area remains largely unexplored,
+as indicated by the predominant use of simpler methods in the reviewed
+literature.
+
+\subsection{Integration of Hybrid Methods}
+Hybrid methods that combine GAs with other optimization techniques, such as
+local search or constraint programming, have shown promise in several studies,
+including those by Akkan (2018) and Matias (2018). These approaches leverage
+the strengths of multiple algorithms to address different aspects of the
+problem more effectively. The success of hybrid methods suggests that further
+integration of complementary techniques could enhance the performance of GAs
+in timetabling.
+
+
 
 %% Conclusion --------------------------------------------------------------- %%
 \section{Conclusion}
-To do.
+The review of genetic algorithms applied to educational timetabling reveals a
+landscape dominated by well-established techniques such as direct encoding,
+multi-objective fitness functions, and roulette wheel selection. While these
+methods have proven effective, there is considerable potential for innovation
+through the adoption of less common strategies, including parallelism, adaptive
+evolutionary processes, and advanced population initialization. Future research
+should focus on these underexplored areas to further enhance the capability and
+efficiency of genetic algorithms in solving complex timetabling problems.
+The continued integration of hybrid methods also presents a promising direction
+for achieving superior results.
 
 %% Future Work -------------------------------------------------------------- %%
 \section{Future Work}

@@ -6,3 +6,8 @@ Metaheuristics
 encodings
 GAs
 demes
+Init
+UCTP
+HSTP
+MILP
+func
