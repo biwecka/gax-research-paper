@@ -60,25 +60,24 @@
 \title{Overview of Genetic Algorithms in Educational Timetabling}
 
 %% AUTHORS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \author{Luca Quaer}
-% \email{luca@quaer.net}
+\author{Luca Quaer}
+\email{luca@quaer.net}
+\affiliation{
+  \institution{Wilhelm Büchner Hochschule}
+  \city{Darmstadt}
+  \state{Baden-Württemberg}
+  \country{Germany}
+}
+
+% \author{John Doe}
+% \email{john@doe.net}
 
 % \affiliation{
-%   \institution{Wilhelm Büchner Hochschule}
-%   \city{Darmstadt}
-%   \state{Baden-Württemberg}
-%   \country{Germany}
+%   \institution{Massachusetts Institute of Technology}
+%   \city{Cambridge}
+%   \state{MA 02139}
+%   \country{United States of America}
 % }
-
-\author{John Doe}
-\email{john@doe.net}
-
-\affiliation{
-  \institution{Massachusetts Institute of Technology}
-  \city{Cambridge}
-  \state{MA 02139}
-  \country{United States of America}
-}
 
 
 %% DATES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -92,12 +91,37 @@
 %% The abstract is a short summary of the work to be presented in the
 %% article.
 \begin{abstract}
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
-Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.
-At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd  duo dolores et ea rebum. Stet clita kasd  duo dolores et ea rebum. Stet clita kasd  gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, 
+Educational timetabling is a complex optimization problem common to
+academic institutions such as schools, colleges and universities.
+It is a NP-complete combinatorial optimization problem, which requires
+efficient allocation of resources like classrooms and instructors to various
+activities within educational institutions.
+This paper examines the application of genetic algorithms addressing such
+timetabling problems, leveraging their ability to effectively explore large
+solution spaces.
+
+The study provides a comprehensive analysis of the current state of research on
+genetic algorithms in educational timetabling, highlighting prevalent
+techniques and identifying underutilized strategies like parallelism and
+adaptive evolutionary strategies, emphasizing the potential for innovation in
+solving timetabling problems.
+
+Through a systematic literature review and discussion, the paper identifies
+trends and areas for future research, underscoring the importance of exploring
+innovative techniques to enhance the efficiency of genetic algorithms in
+addressing timetabling complexities. The findings contribute to advancing
+timetabling practices, exploring new methodologies and combinations of
+characteristics to ultimately push innovation in the field, increase
+the utilization of genetic algorithms and their effectiveness specifically
+in the domain of educational timetabling.
+
+% In conclusion, this research sheds light on the effectiveness of genetic
+% algorithms in educational timetabling and underscores the potential for further
+% exploration and innovation in the field.
+% By leveraging the strengths of genetic algorithms and exploring new
+% methodologies, researchers can improve timetabling processes, leading to better
+% resource allocation and enhanced educational experiences.
+
 \end{abstract}
 
 
@@ -875,7 +899,7 @@ restricted to local neighborhoods (see \autoref{tab:parallel-ga-fine})
 
 
 %% Discussion --------------------------------------------------------------- %%
-\newpage
+% \newpage
 \section{Discussion}
 This chapter presents and discusses the results of the conducted literature
 analysis. It focuses on presenting the genetic algorithms found in literature
@@ -1998,11 +2022,11 @@ found in the literature research, and their main characteristics.
 
 The application of genetic algorithms in the field of educational timetabling
 has demonstrated significant potential in addressing complex optimization
-problems. This chapter discusses the various methodologies and strategies
-employed in the studies reviewed, highlighting both the prevalent and less
-commonly used techniques. The aim is to provide a comprehensive understanding
-of the current landscape, identify trends, and suggest potential areas for
-future research.
+problems. The following paragraphs discuss the various methodologies and
+strategies employed in the studies reviewed, highlighting both the prevalent
+and less commonly used techniques.
+The aim is to provide a comprehensive understanding of the current landscape,
+identify trends, and suggest potential areas for future research.
 
 \subsection{Prevalent Techniques}
 Several methods and strategies have emerged as popular choices among researchers
@@ -2015,7 +2039,8 @@ Direct encoding methods are widely adopted across many studies. This approach
 involves representing the time-table directly in a matrix form, which simplifies
 the application of genetic operators and allows for straightforward
 interpretation and manipulation of solutions.
-Examples include the studies by Thanh (2007), Almeida (2015), and Akkan (2018).
+Examples include the studies by Thanh (2007, \cite{Thanh2007}),
+Almeida (2015, \cite{Almeida2015}), and Akkan (2018, \cite{Akkan2018}).
 This prevalence suggests that direct encoding is effective in handling the
 constraints and requirements of timetabling problems.
 
@@ -2023,46 +2048,53 @@ constraints and requirements of timetabling problems.
 The use of multi-objective fitness functions is another common strategy.
 Researchers often employ a weighted sum approach to balance various objectives,
 such as minimizing the number of constraint violations and maximizing
-robustness. This method is evident in the works of Liu (2011), Badoni (2015),
-and Matias (2018). Multi-objective functions provide a more holistic evaluation
+robustness. This method is evident in the works of Liu
+(2011, \cite{Liu2011}), Badoni (2015, \cite{Badoni2015}), and Matias
+(2018, \cite{Matias2018fair}).
+Multi-objective functions provide a more holistic evaluation
 of solutions, aligning well with the complex nature of educational timetabling,
 which typically involves multiple competing goals.
 
 \subsubsection{Selection Mechanisms}
 Roulette wheel selection is frequently used to guide the evolution of
-solutions, as seen in Goos (2002), Beligiannis (2009), and Gozali (2020).
+solutions, as seen in Goos (2002, \cite{Goos2002}), Beligiannis
+(2009, \cite{Beligiannis2009}), and Gozali (2020, \cite{gozali2020islandmodel}).
 This method mimics natural selection by giving higher probabilities of
 selection to better-performing solutions, thus ensuring that high-quality
 timetables are more likely to propagate through successive generations.
 
-\subsubsection{Crossover and Mutation Strategies}
-Custom and multi-point crossover operators are also popular choices.
-These operators are tailored to maintain feasible solutions and introduce
-diversity into the population. For example, Thanh (2007) and Gozali (2020)
-employ two-point and multi-point crossover methods, respectively, while Goos
-(2002) integrates repair functions to handle infeasible offspring.
+\subsubsection{Crossover and Mutation Operations}
+Crossover and mutation operators are rarely used as \enquote{defined in
+textbooks}. A popular choice among the reviewed algorithms is $n$-point
+crossover, although it has mostly been customized to suit the utilized
+encoding. For example, Thanh (2007, \cite{Thanh2007}) and Gozali
+(2020, \cite{gozali2020islandmodel}) employ two-point and multi-point crossover
+methods, respectively, while Goos (2002, \cite{Goos2002}) integrates repair
+functions to handle infeasible offspring.
 
 Similarly, mutation strategies often involve domain-specific heuristics to
 prevent infeasible solutions. Swapping-based mutations, as utilized by
-Liu (2011) and Raghavjee (2015), are common, as they effectively explore the
-solution space without violating hard constraints.
+Liu (2011, \cite{Liu2011}) and Raghavjee (2015, \cite{Raghavjee2015}),
+are common, as they can oftentimes be utilized to explore the solution space
+without violating hard constraints.
 
 \subsection{Less Utilized Techniques}
 Despite the success of the aforementioned methods, several techniques are
 notably underutilized in the reviewed literature. These include parallelism,
-adaptive/dynamic steering of the evolutionary process, and more sophisticated
+adaptive steering of the evolutionary process, and more sophisticated
 population initialization strategies.
 
 \subsubsection{Parallelism}
 Parallel genetic algorithms offer substantial advantages in terms of
 computational efficiency and solution quality by distributing the workload
 across multiple processors. However, only a few studies, such as those by
-Yousef (2016) and Gozali (2020), have explored this approach. Given the
+Yousef (2016, \cite{yousef2016gpu}) and Gozali
+(2020, \cite{gozali2020islandmodel}), have explored this approach. Given the
 increasing availability of parallel computing resources, there is significant
 potential for further research in this area to enhance the scalability and
 performance of GAs in timetabling.
 
-\subsubsection{Adaptive/Dynamic Evolutionary Strategies}
+\subsubsection{Adaptive Evolutionary Strategies}
 Adaptive and dynamic evolutionary strategies, which adjust parameters such as
 mutation rates or selection pressures based on the current state of the
 population, can improve convergence rates and solution quality.
@@ -2082,12 +2114,13 @@ as indicated by the predominant use of simpler methods in the reviewed
 literature.
 
 \subsection{Integration of Hybrid Methods}
-Hybrid methods that combine GAs with other optimization techniques, such as
-local search or constraint programming, have shown promise in several studies,
-including those by Akkan (2018) and Matias (2018). These approaches leverage
-the strengths of multiple algorithms to address different aspects of the
-problem more effectively. The success of hybrid methods suggests that further
-integration of complementary techniques could enhance the performance of GAs
+Hybrid methods that combine genetic algorithms with other optimization
+techniques, such as local search or constraint programming, have shown promise
+in several studies, including those by Feng (2017, \cite{Feng2017}) and Matias
+(2018, \cite{Matias2018fair}). These approaches leverage the strengths of
+multiple algorithms to address different aspects of the problem more
+effectively. The success of hybrid methods suggests that further integration of
+complementary techniques could enhance the performance of genetic algorithms
 in timetabling.
 
 
