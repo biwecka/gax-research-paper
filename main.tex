@@ -213,7 +213,7 @@ Therefore, this paper specifically focuses on genetic algorithms and how they
 are used in the domain of educational timetabling.
 
 % What is a GA?
-Genetic algorithms (abbr. \textit{GA}) are a heuristic search method inspired by
+Genetic algorithms (\textit{GAs}) are a heuristic search method inspired by
 the process of natural selection in biological evolution and thus belong to
 the group of evolutionary algorithms \cite{Katoch2021}. As mentioned previously,
 genetic algorithms utilize a population based approach, meaning multiple
@@ -227,7 +227,7 @@ imitating the Darwinian theory of survival of the fittest \cite{Katoch2021}.
 \section{Methods}
 %% Intro
 Publications in the past, especially survey papers, in the field of educational
-timetabling, showed a shift from meta-heuristic methods like genetic algorithms
+timetabling, showed a shift from metaheuristic methods like genetic algorithms
 towards mathematical optimization methods in the recent years
 \cite{Tan2021}.
 %
@@ -240,7 +240,7 @@ in solving timetabling problems \cite{Rezaeipanah2019,Chen2021}.
 %
 The decreasing utilization of genetic algorithms could be the result of
 researchers not using the best algorithm to solve a problem but rather
-methodologies they already have experience with \cite{Ceschia2023}.
+methodologies they are already familiar with \cite{Ceschia2023}.
 
 %% What this paper does
 This paper analyzes the current use of genetic algorithms with focus on
@@ -249,19 +249,19 @@ approaches to solve educational timetabling problems.
 %
 The basis for this is a comprehensive systematic literature research that
 was carried out in order to identify as many relevant applications of genetic
-algorithms in the domain of educational timetabling as possible, and
+algorithms in the domain of educational timetabling as possible and
 present their most crucial characteristics.
 %
 Several scientific databases such as IEEE Xplore, ACM Digital Library,
 SpringerLink and Google Scholar were searched with prominent keywords such as
 \enquote{educational timetabling}, \enquote{timetabling}, \enquote{scheduling},
-\enquote{heuristic} and \enquote{meta-heuristic}.
+\enquote{heuristic} and \enquote{metaheuristic}.
 %
 In order to provide a comprehensive overview of the development and use of
 genetic algorithms in this field, care was taken to give preference to recent
 publications. However, older, established studies and papers were also taken
-into account in order to ensure that no methods already in use were excluded
-only due to their age.
+into account in order to ensure that no previously researched methods were
+excluded only due to their age.
 %
 Nevertheless, the primary objective was to provide a comprehensive and detailed
 description of the algorithms, with the aim of documenting its properties.
@@ -276,12 +276,12 @@ First, the fundamentals of genetic algorithms and selected advanced concepts
 are presented. Introducing some basic concepts serves to better understand the
 properties of the algorithms, which are presented in the discussion section
 of the paper. The selected concepts which are part of the introduction give
-a good overview of genetic search, but cannot be an exhaustive coverage of the
+a good overview of genetic search, but cannot be an exhaustive coverage of
 all developments and research in this field.
 %
 After the introduction, the algorithms identified in the literature research
-are then presented in a morphological box in combination with their most
-important characteristics.
+are presented in a morphological box including their most important
+characteristics.
 This provides an overview of the current state of research on genetic algorithms
 for educational timetabling and also highlights possible research approaches
 to be taken, by creating combination of algorithm properties, which have not
@@ -311,14 +311,14 @@ the possible solution in coded form is also called \textit{chromosome} or
 \textit{individual} \cite{Affenzeller2009}.
 
 In addition, genetic algorithms employ a population based search approach,
-whereby instead of a single potential solution a whole set of solutions is
+whereby instead of a single solution candidate a whole set of solutions is
 iteratively improved. Such a set of solutions is called \textit{population}
 and consists of multiple chromosomes. The stages of iterative improvements
 are called \textit{generations} \cite{Affenzeller2009}.
 
 In order for the algorithm to optimize towards a desired solution, it is
 necessary to have a measure in place to evaluate and compare the chromosomes.
-This value referred to as \textit{fitness} and is provided by the
+This value is referred to as \textit{fitness} and is provided by the
 \textit{fitness function} (also called \textit{objective function})
 \cite{Affenzeller2009}.
 
@@ -333,8 +333,8 @@ The resulting offspring may undergo one or more mutations
 (\textit{mutation} phase) with a defined probability before the fitness of
 these new chromosomes is determined (\textit{evaluation} phase)
 \cite{Affenzeller2009}.
-Based on certain criteria chromosomes from the current generation and their
-offspring are now selected, to replace the population with a new one
+Based on certain criteria, chromosomes from the current generation and their
+offspring are now selected, to replace the current population
 (\textit{replacement} phase) \cite{Affenzeller2009}.
 The result of this step is a new generation of chromosomes forming a new
 (usually fitter) population \cite{Affenzeller2009}.
@@ -353,15 +353,15 @@ Genetic algorithms require two essential components: an encoding and
 a fitness function \cite{Affenzeller2009}.
 The encoding plays a pivotal role in the design of a genetic algorithm
 \cite{Katoch2021}.
-Its most significant property is that it can completely represent the solution
-space of the problem at hand, thereby deriving the potential solution to the
+Its most significant property is that it fully represents the solution
+space of the problem at hand, thereby deriving the potential solution of the
 problem from a given chromosome \cite{Affenzeller2009}.
 Moreover, the encoding must be designed in consideration of the data
-processing of other genetic algorithm components, such as the fitness function
+processing of other algorithm components, such as the fitness function
 and the crossover operator \cite{Affenzeller2009}.
 The fitness function must calculate the fitness value based on this
 representation of a solution candidate, and the crossover operator should
-generate offspring that are as valid as possible \cite{Affenzeller2009}.
+generate offspring which represent valid solutions \cite{Affenzeller2009}.
 In particular, the latter aspect can often only be fulfilled by an adapted,
 domain-specific representation \cite{Affenzeller2009}.
 %
@@ -375,10 +375,11 @@ digit (\textit{bit}).
 %
 The main advantage of binary encoding is the ability to use common and
 well-researched crossover and mutation operators \cite{Katoch2021}.
-However, these strategies lead to invalid representations, which
-would need to be repaired \cite{Beligiannis2009}. Such repair strategies are
-used in practice but pose the risk of introducing too much genetic information
-which is from neither of the parents \cite{Affenzeller2009,Beligiannis2009}.
+However, these strategies may lead to representations of invalid solution
+candidates, which would need to be repaired \cite{Beligiannis2009}.
+Such repair strategies are used in practice but pose the risk of introducing
+too much genetic information which is from neither of the parents
+\cite{Affenzeller2009,Beligiannis2009}.
 %
 Furthermore, utilizing this encoding requires converting solution candidates
 into binary form \cite{Katoch2021}. Depending on the complexity of the problem
@@ -406,7 +407,7 @@ problem are unique, this implies that the values in the array are unique too
 
 \subsubsection{Matrix Encoding}
 Matrix encoding is a technique used in genetic algorithms where solutions are
-represented as matrices (two-dimensional arrays) rather than as one-dimensional
+represented as matrices (two-dimensional arrays) rather than one-dimensional
 arrays. This encoding is particularly useful for problems that
 naturally map to a two-dimensional structure, such as scheduling, graphs
 (as adjacency matrix) layout design, or certain combinatorial problems
@@ -491,8 +492,7 @@ will participate in formation of the next generatoin}\cite{Katoch2021}.
 
 \subsubsection{Rank Selection}
 \enquote{Rank selection is the modified form of Roul-ette Wheel selection.
-It utilizes the ranks instead of fitness value}.
-See \cite{Affenzeller2009}.
+It utilizes the ranks instead of fitness value} \cite{Katoch2021}.
 A possible approach of realizing this selection method is by ordering the
 individuals according to their fitness and add copies of individuals in a way
 that the best individual receives a pre-determined multiple number of copies
@@ -527,8 +527,8 @@ Given the close relation between the encoding scheme and the crossover operator,
 certain crossover operators may not be compatible with some encodings in context
 of the problem at hand \cite{Affenzeller2009}.
 
-\subsubsection{Single Point}
-The single point crossover method cuts each parent chromosomes into a head and
+\subsubsection{Single-Point Crossover}
+The single-point crossover method cuts each parent chromosomes into a head and
 tail section. For this a random position is chosen at which both chromosomes
 are cut \cite{Affenzeller2009}.
 For a chromosome using binary encoding for example, this translates to
@@ -536,8 +536,8 @@ splitting the array used to represent the chromosome into two sections.
 The tail sections are then swapped producing two new individuals
 \cite{Affenzeller2009}.
 
-\subsubsection{Multiple Point}
-Similar to the single point crossover method, the multipoint crossover
+\subsubsection{Multi-Point Crossover}
+Similar to the single-point crossover method, the multipoint crossover
 cuts the parent chromosomes into sections. In contrast to the single point
 crossover, and as the name suggests, the multipoint crossover method
 uses multiple random cuts instead of a single one
@@ -555,7 +555,7 @@ This process is equal to randomly swapping genes (at the same position) between
 the parents and taking the resulting chromosomes as offspring \cite{Katoch2021}.
 
 
-\subsubsection{Partially matched crossover}
+\subsubsection{Partially Matched Crossover}
 Partially matched crossover is the most commonly used crossover operator,
 as it performs better than most of the other operators \cite{Katoch2021}.
 This crossover technique works by randomly choosing a continuous part of genes
@@ -574,7 +574,7 @@ map these values to the offspring chromosomes instead of simply copying them
 \end{figure}
 
 
-\subsubsection{Order crossover}
+\subsubsection{Order Crossover}
 Order crossover copies one (or more) parts of the parent to the offspring
 and fills the remaining space with genes from the respective present, which
 are not present in the copied section \cite{Katoch2021}.
@@ -642,7 +642,7 @@ algorithms:
 \cite{Affenzeller2009}
 As the name already suggests, the generational replacement strategy simply
 replaces the current population with the newly created offspring.
-This process may result in a decrease of the fitness of the fittest individual
+This process may result in a decrease of the fitness of the best individual
 in the population at some stages of evolution \cite{Affenzeller2009}.
 
 \subsubsection{Elitism}
@@ -702,8 +702,8 @@ methods to fit one's own use case. This has led to a steady development of new
 approaches to improve genetic search in general.
 While it is beyond the scope of this paper to provide an exhaustive overview
 of the many branches of advanced genetic search,
-the following sections present a selection of important in regard to solving
-timetabling problems.
+the following sections present a selection of important techniques in regard to
+solving timetabling problems.
 
 %%% Direct and Indirect Encoding %%%
 \subsection{Direct and Indirect Encoding}
@@ -835,13 +835,14 @@ global parallelization, coarse-grained parallel GAs and fine-grained parallel
 GAs. The most popular for practical applications is the coarse-grained model,
 also known as the island model \cite{Affenzeller2009}.
 
-\subsubsection*{Global Parallelization}
+\subsubsection{Global Parallelization}
 In global parallelization, a single population is used, and selection involves
 all individuals. This method retains the same qualitative properties as a
-sequential GA, with the primary parallelized operation being the evaluation of
-individual fitness. A master node distributes and collects workloads from slave
-processors, making this model efficient when fitness evaluation is the primary
-runtime bottleneck (see \autoref{tab:parallel-ga-global})\cite{Affenzeller2009}.
+sequential genetic algorithm, with the primary parallelized operation being the
+evaluation of individual fitness. A master node distributes and collects
+workloads from slave processors, making this model efficient when fitness
+evaluation is the primary runtime bottleneck
+(see \autoref{tab:parallel-ga-global})\cite{Affenzeller2009}.
 \begin{figure}[h]
   \includegraphics[scale=0.22]{assets/parallel-ga-global.png}
   \caption{
@@ -852,10 +853,10 @@ runtime bottleneck (see \autoref{tab:parallel-ga-global})\cite{Affenzeller2009}.
   \label{tab:parallel-ga-global}
 \end{figure}
 
-\subsubsection*{Coarse-grained parallel genetic algorithms}
-Coarse-grained parallel GAs divide the population into subpopulations
-(called \textit{islands} or \textit{demes}) that evolve mostly in isolation,
-occasionally exchanging individuals during migration phases.
+\subsubsection{Coarse-grained parallel genetic algorithms}
+Coarse-grained parallel genetic algorithms divide the population into
+subpopulations (called \textit{islands} or \textit{demes}) that evolve mostly
+in isolation, occasionally exchanging individuals during migration phases.
 This model introduces significant changes to the algorithm structure,
 differing from sequential genetic algorithms \cite{Affenzeller2009}.
 The main idea is that isolated demes will converge to different regions of the
@@ -877,7 +878,7 @@ parallelizing genetic algorithms \cite{Affenzeller2009}.
   \label{tab:parallel-ga-coarse}
 \end{figure}
 
-\subsubsection*{Fine-grained parallel genetic algorithms}
+\subsubsection{Fine-grained parallel genetic algorithms}
 Fine-grained parallel genetic algorithms involve many small demes which are
 part of one spatially distributed population \cite{Affenzeller2009}.
 The idea behind this is that individuals are spread throughout the
@@ -1214,13 +1215,13 @@ found in the literature research, and their main characteristics.
 
     % Fitness Function
     \begin{tabular}[c]{@{}l@{}}
-      2-step\\
+      Two-step\\
       cost function\\
     \end{tabular}&
 
     % Selection
     \begin{tabular}[c]{@{}l@{}}
-      $t$-tournament
+      $t$-Tournament
     \end{tabular}&
 
     % Crossover
@@ -1493,7 +1494,7 @@ found in the literature research, and their main characteristics.
 
     % Selection
     \begin{tabular}[c]{@{}l@{}}
-      $2$-tournament
+      $2$-Tournament
     \end{tabular}&
 
     % Crossover
@@ -1742,7 +1743,7 @@ found in the literature research, and their main characteristics.
 
     % Mutation
     \begin{tabular}[c]{@{}l@{}}
-      3-step:\\
+      Three-step:\\
       move, swap,\\
       compare
     \end{tabular}&
@@ -2103,15 +2104,15 @@ studies. The lack of adaptive mechanisms suggests an area for future
 exploration, where more responsive algorithms could lead to more efficient
 search processes and better handling of diverse problem instances.
 
-\subsubsection{Population Initialization}
-Most studies rely on random or heuristic-based population initialization
-methods. While these approaches are straightforward and often effective, they
-may not fully exploit the potential of more sophisticated initialization
-strategies. Techniques that incorporate domain knowledge or use advanced
-heuristics could provide a more robust starting point, leading to faster
-convergence and higher-quality solutions. This area remains largely unexplored,
-as indicated by the predominant use of simpler methods in the reviewed
-literature.
+% \subsubsection{Population Initialization}
+% Most studies rely on random or heuristic-based population initialization
+% methods. While these approaches are straightforward and often effective, they
+% may not fully exploit the potential of more sophisticated initialization
+% strategies. Techniques that incorporate domain knowledge or use advanced
+% heuristics could provide a more robust starting point, leading to faster
+% convergence and higher-quality solutions. This area remains largely unexplored,
+% as indicated by the predominant use of simpler methods in the reviewed
+% literature.
 
 \subsection{Integration of Hybrid Methods}
 Hybrid methods that combine genetic algorithms with other optimization
@@ -2131,17 +2132,17 @@ The review of genetic algorithms applied to educational timetabling reveals a
 landscape dominated by well-established techniques such as direct encoding,
 multi-objective fitness functions, and roulette wheel selection. While these
 methods have proven effective, there is considerable potential for innovation
-through the adoption of less common strategies, including parallelism, adaptive
-evolutionary processes, and advanced population initialization. Future research
-should focus on these underexplored areas to further enhance the capability and
-efficiency of genetic algorithms in solving complex timetabling problems.
-The continued integration of hybrid methods also presents a promising direction
-for achieving superior results.
+through the adoption of less common strategies, including parallelism and 
+adaptive evolutionary processes. %, and advanced population initialization.
+Future research should focus on these underexplored areas to further enhance
+the capability and efficiency of genetic algorithms in solving complex
+timetabling problems. The continued integration of hybrid methods also presents
+a promising direction for achieving superior results.
 
 %% Future Work -------------------------------------------------------------- %%
 \section{Future Work}
 The findings from this work will serve as the basis for the author's master's
-thesis, in which a genetic algorithm for a special timetabling problem will be
+thesis, in which a genetic algorithm for a school timetabling problem will be
 developed.
 The examinations conducted in this paper provide information about the most
 frequently used techniques of genetic search within the timetabling domain,
