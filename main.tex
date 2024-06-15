@@ -220,7 +220,32 @@ genetic algorithms utilize a population based approach, meaning multiple
 solution candidates are iteratively evolved through numerous generations
 imitating the Darwinian theory of survival of the fittest \cite{Katoch2021}.
 
-% Introduce structure here? Or better do this in the "Methods" chapter?
+%% Structure of the paper
+This paper is structured as follows:
+First, the methods and details about how the research was conducted are
+explained.
+%
+Then, the fundamentals of genetic algorithms and selected advanced concepts
+are presented. Introducing some basic concepts serves to better understand the
+properties of the algorithms, which are presented in the
+discussion section % TODO: change "discussion section" to "research results ..."
+of the paper. The selected concepts which are part of the introduction give
+a good overview of genetic search, but cannot be an exhaustive coverage of
+all developments and research in this field.
+%
+After the introduction, the algorithms identified in the literature research
+are presented in a morphological box including their most important
+characteristics.
+This provides an overview of the current state of research on genetic
+algorithms for educational timetabling, which is followed by a discussion
+highlighting research gaps that have the potential for further investigation
+providing opportunities for future work.
+%
+Finally, the overarching findings from the literature research are used to
+assess the potential success of genetic algorithms in future research.
+
+% TODO: Wenn noch ein zusätzliches Kapitel hinzugefügt wird, dann muss das hier
+%       auch irgendwie noch eingefügt werden.
 
 
 %% Methods ------------------------------------------------------------------ %%
@@ -234,9 +259,9 @@ towards mathematical optimization methods in the recent years
 Consequently, a research gap in the field of educational timetabling
 with regard to genetic algorithms opened up.
 %
-This may seem like genetic algorithms are not suitable in this domain,
-but research shows, that genetic algorithms have proven their effectiveness
-in solving timetabling problems \cite{Rezaeipanah2019,Chen2021}.
+This trend might suggest that genetic algorithms are not suitable in this
+domain, but research shows, that genetic algorithms have proven their
+effectiveness in solving timetabling problems \cite{Rezaeipanah2019,Chen2021}.
 %
 The decreasing utilization of genetic algorithms could be the result of
 researchers not using the best algorithm to solve a problem but rather
@@ -258,40 +283,46 @@ SpringerLink and Google Scholar were searched with prominent keywords such as
 \enquote{heuristic} and \enquote{metaheuristic}.
 %
 In order to provide a comprehensive overview of the development and use of
-genetic algorithms in this field, care was taken to give preference to recent
-publications. However, older, established studies and papers were also taken
-into account in order to ensure that no previously researched methods were
-excluded only due to their age.
+genetic algorithms in the field, preference was given to recent publications.
+However, older, established studies and papers were also taken into account
+to ensure that no previously researched methods were excluded only due to their
+age.
 %
 Nevertheless, the primary objective was to provide a comprehensive and detailed
 description of the algorithms, with the aim of documenting its properties.
-This objective is not consistently met in many publications, particularly
-when the algorithm was deliberately not published and therefore only rough
-details were disclosed and only results have been discussed.
+Unfortunately, this objective is not consistently met in the researched
+publications, meaning some algorithms presented in this paper lack details
+about certain characteristics.
+In particular, this is the case when an algorithm was deliberately not
+published. In such instances, papers only disclose rough details and focus on
+discussing results only.
 
-
-%% Structure of the paper
-This paper is structured as follows:
-First, the fundamentals of genetic algorithms and selected advanced concepts
-are presented. Introducing some basic concepts serves to better understand the
-properties of the algorithms, which are presented in the discussion section
-of the paper. The selected concepts which are part of the introduction give
-a good overview of genetic search, but cannot be an exhaustive coverage of
-all developments and research in this field.
-%
-After the introduction, the algorithms identified in the literature research
-are presented in a morphological box including their most important
+The research results are presented in form of a morphological box, which
+provides a clear overview of each algorithm and its most important
 characteristics.
-This provides an overview of the current state of research on genetic algorithms
-for educational timetabling and also highlights possible research approaches
-to be taken, by creating combination of algorithm properties, which have not
-been used in this constellation.
+Included in the overview are properties such as the utilized encoding method,
+the type of fitness function and the genetic operators \textit{selection},
+\textit{crossover} and \textit{mutation}.
+%
+Using a morphological box for presenting the results was a deliberate choice
+to not only offer a structured overview of the current state of research,
+but also to highlight the popularity of certain concepts throughout the
+presented algorithms.
+The table-like structure clearly shows prevalent and less utilized techniques
+of genetic search, as well as allowing to easily find combinations of algorithm
+properties, which have not been used in this constellation before.
+%
 The systematic analysis and presentation in form of a morphological box is
 intended to inspire practitioners and researchers to develop innovative
 and effective approaches and to further develop existing methods.
-%
-Finally, the overarching findings from the literature research are used to
-assess the potential success of genetic algorithms in future research.
+
+% This provides an overview of the current state of research on genetic algorithms
+% for educational timetabling and also highlights possible research approaches
+% to be taken, by creating combination of algorithm properties, which have not
+% been used in this constellation.
+% The systematic analysis and presentation in form of a morphological box is
+% intended to inspire practitioners and researchers to develop innovative
+% and effective approaches and to further develop existing methods.
 
 
 %% Basic Concepts ----------------------------------------------------------- %%
@@ -488,7 +519,7 @@ of all individuals in the population \cite{Affenzeller2009}.
 space proportional to its fitness}\cite{Affenzeller2009} on an imaginary
 roulette wheel.
 \enquote{This wheel is then rotated randomly to select specific solutions that
-will participate in formation of the next generatoin}\cite{Katoch2021}.
+will participate in formation of the next generation.} \cite{Katoch2021}
 
 \subsubsection{Rank Selection}
 \enquote{Rank selection is the modified form of Roul-ette Wheel selection.
@@ -1825,55 +1856,55 @@ found in the literature research, and their main characteristics.
     \hline
 
   % ----------------------------------------------------------------------------
-  % 17. Row
-    % Problem
-    ETP&
+  % % 17. Row
+  %   % Problem
+  %   ETP&
 
-    % Encoding
-    \begin{tabular}[c]{@{}l@{}}
-      ?
-    \end{tabular}&
+  %   % Encoding
+  %   \begin{tabular}[c]{@{}l@{}}
+  %     ?
+  %   \end{tabular}&
 
-    % Fitness Function
-    \begin{tabular}[c]{@{}l@{}}
-      Multi objective\\
-      (normalized sum)
-    \end{tabular}&
+  %   % Fitness Function
+  %   \begin{tabular}[c]{@{}l@{}}
+  %     Multi objective\\
+  %     (normalized sum)
+  %   \end{tabular}&
 
-    % Selection
-    \begin{tabular}[c]{@{}l@{}}
-      ?
-    \end{tabular}&
+  %   % Selection
+  %   \begin{tabular}[c]{@{}l@{}}
+  %     ?
+  %   \end{tabular}&
 
-    % Crossover
-    \begin{tabular}[c]{@{}l@{}}
-      ?
-    \end{tabular}&
+  %   % Crossover
+  %   \begin{tabular}[c]{@{}l@{}}
+  %     ?
+  %   \end{tabular}&
 
-    % Mutation
-    \begin{tabular}[c]{@{}l@{}}
-      ?
-    \end{tabular}&
+  %   % Mutation
+  %   \begin{tabular}[c]{@{}l@{}}
+  %     ?
+  %   \end{tabular}&
 
-    % Population Initialization
-    \begin{tabular}[c]{@{}l@{}}
-      ?
-    \end{tabular}&
+  %   % Population Initialization
+  %   \begin{tabular}[c]{@{}l@{}}
+  %     ?
+  %   \end{tabular}&
 
-    % Elitism
-    \begin{tabular}[c]{@{}l@{}}
-      ?
-    \end{tabular}&
+  %   % Elitism
+  %   \begin{tabular}[c]{@{}l@{}}
+  %     ?
+  %   \end{tabular}&
 
-    % Note
-    \begin{tabular}[c]{@{}l@{}}
+  %   % Note
+  %   \begin{tabular}[c]{@{}l@{}}
 
-    \end{tabular}&
+  %   \end{tabular}&
 
-    % Source
-    \cite{tung2021genetic} (2021)\\
+  %   % Source
+  %   \cite{tung2021genetic} (2021)\\
 
-    \hline
+  %   \hline
 
   % ----------------------------------------------------------------------------
   % 18. Row
@@ -2104,15 +2135,7 @@ studies. The lack of adaptive mechanisms suggests an area for future
 exploration, where more responsive algorithms could lead to more efficient
 search processes and better handling of diverse problem instances.
 
-% \subsubsection{Population Initialization}
-% Most studies rely on random or heuristic-based population initialization
-% methods. While these approaches are straightforward and often effective, they
-% may not fully exploit the potential of more sophisticated initialization
-% strategies. Techniques that incorporate domain knowledge or use advanced
-% heuristics could provide a more robust starting point, leading to faster
-% convergence and higher-quality solutions. This area remains largely unexplored,
-% as indicated by the predominant use of simpler methods in the reviewed
-% literature.
+
 
 \subsection{Integration of Hybrid Methods}
 Hybrid methods that combine genetic algorithms with other optimization
@@ -2124,7 +2147,15 @@ effectively. The success of hybrid methods suggests that further integration of
 complementary techniques could enhance the performance of genetic algorithms
 in timetabling.
 
-
+% \subsubsection{Population Initialization}
+% Most studies rely on random or heuristic-based population initialization
+% methods. While these approaches are straightforward and often effective, they
+% may not fully exploit the potential of more sophisticated initialization
+% strategies. Techniques that incorporate domain knowledge or use advanced
+% heuristics could provide a more robust starting point, leading to faster
+% convergence and higher-quality solutions. This area remains largely unexplored,
+% as indicated by the predominant use of simpler methods in the reviewed
+% literature.
 
 %% Conclusion --------------------------------------------------------------- %%
 \section{Conclusion}
