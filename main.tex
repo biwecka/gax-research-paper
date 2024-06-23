@@ -57,7 +57,7 @@
 %% TITLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% The "title" command has an optional parameter,
 % \title{Genetic Algorithms for Timetabling: The current state of the art}
-\title{Overview of Genetic Algorithms in Educational Timetabling}
+\title{Overview of Genetic Algorithms in Educational Timetabling: A Survey}
 
 %% AUTHORS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \author{Luca Quaer}
@@ -799,7 +799,7 @@ individuals in the population. These individuals are more likely to be selected
 for reproduction, leading to a quicker convergence towards optimal or
 near-optimal solutions. However, if the pressure is too high, it might cause
 premature convergence, where the population loses diversity and gets stuck in
-local optima \cite{back1994selective}.
+local maxima \cite{back1994selective}.
 
 Conversely, when selection pressure is low, the algorithm less strongly favors
 the fittest individuals. This allows for a more diverse set of individuals
@@ -930,9 +930,9 @@ restricted to local neighborhoods (see \autoref{tab:parallel-ga-fine})
 \end{figure}
 
 
-%% Discussion --------------------------------------------------------------- %%
+%% Research Results --------------------------------------------------------- %%
 % \newpage
-\section{Discussion}
+\section{Research Results}
 This chapter presents and discusses the results of the conducted literature
 analysis. It focuses on presenting the genetic algorithms found in literature
 and their properties in a morphological box, which was chosen to easily
@@ -947,7 +947,7 @@ found in the literature research, and their main characteristics.
 \begin{table*}[]
 \begin{adjustwidth}{-2cm}{-2cm}
   \centering
-  
+
   \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
   \hline
   % Headline Row
@@ -2157,6 +2157,92 @@ in timetabling.
 % as indicated by the predominant use of simpler methods in the reviewed
 % literature.
 
+%% Discussion --------------------------------------------------------------- %%
+\section{Discussion}
+The application of genetic algorithms in educational timetabling has yielded
+promising results, but it also highlights several areas for further exploration
+and improvement.
+This chapter evaluates the research results and identifies research gaps that
+could guide future studies.
+
+\subsection{Encodings}
+The prevalence of direct encodings in the research results suggests a potential
+research gap regarding indirect encodings.
+The utilization of direct encoding schemes often leads to large search spaces,
+potentially making the algorithm less efficient.
+
+Indirect encodings, on the other hand, could significantly reduce the size of
+the search space, leading to faster solution discovery.
+Thanh (2007, \cite{Thanh2007}) provides a compelling example of an indirect
+encoding used for educational timetabling, demonstrating its potential to
+streamline the search process and improve performance. Exploring indirect
+encoding methods further could yield substantial improvements in both
+efficiency and solution quality.
+
+\subsection{Parallelism and Hardware Acceleration}
+Parallelism in genetic algorithms offers significant advantages in terms of
+computational efficiency and solution quality. However, it is underutilized
+in the context of educational timetabling. Studies by Yousef
+(2016, \cite{yousef2016gpu}) and Gozali (2020, \cite{gozali2020islandmodel})
+are among the few that have explored parallel genetic algorithms, particularly
+through leveraging GPU acceleration. This suggests a substantial research gap
+in the broader utilization of parallelism.
+
+Moreover, modern CPUs equipped with SIMD (Single Instruction, Multiple Data)
+capabilities present an additional opportunity for hardware acceleration.
+SIMD is a type of parallel processing and can for example perform operations on
+large matrices efficiently, making it suitable for handling genetic operations
+on encoded matrices.
+Investigating the use of SIMD instructions for genetic algorithms could lead
+to significant performance gains on more widely available hardware, as opposed
+to relying on dedicated GPUs.
+This approach could democratize access to high-performance timetabling
+solutions, making them feasible on standard computational setups.
+
+\subsection{Adaptive Strategies and Parameter Tuning}
+A prominent challenge with genetic algorithms is the need for extensive
+parameter tuning\cite{Katoch2021}.
+Parameter tuning means adapting input variables of the algorithm
+(e.g. crossover and mutation probabilities) or properties of the selection
+method (e.g. the degree of elitism).
+%
+This tuning process is not only labor-intensive and requires deep domain
+knowledge, it also adapts the genetic algorithm to a specific problem
+instance, making the algorithm impractical for software products distributed
+to end users.
+
+Adaptive evolutionary strategies, which dynamically adjust the algorithm's
+behavior based on metrics like the selection pressure, are promising but rarely
+implemented in the reviewed studies.
+These strategies offer dual benefits: being based on crucial metrics of the
+genetic process they provide insights into the search process by monitoring
+such metrics,
+and furthermore they provide a certain degree of automatic parameter tuning.
+
+An algorithm leveraging adaptive evolutionary strategies extensively and
+therefore needing less (or no) parameter tuning, would be more robust and
+versatile, capable of performing well across a variety of problem
+instances without manual intervention. This capability could make genetic
+algorithms more accessible and practical for a wider range of timetabling
+instances, reducing the barrier to their adoption especially in smaller
+educational institutions.
+
+\subsection{Hybrid Methods}
+The integration of hybrid methods, which combine genetic algorithms with other
+optimization techniques like local search or constraint programming,
+has shown considerable promise.
+Studies by Feng (2017, \cite{Feng2017}) and Matias (2018, \cite{Matias2018fair})
+demonstrate the effectiveness of hybrid approaches in addressing the
+multifaceted nature of educational timetabling problems. Hybrid methods can
+capitalize on the strengths of different algorithms, addressing various problem
+aspects more comprehensively.
+The success of these approaches suggests that further exploration of hybrid
+methods could further enhance the performance of genetic algorithms.
+Researchers should investigate novel combinations of optimization techniques,
+aiming to develop more robust and efficient solutions for educational
+timetabling.
+
+
 %% Conclusion --------------------------------------------------------------- %%
 \section{Conclusion}
 The review of genetic algorithms applied to educational timetabling reveals a
@@ -2167,16 +2253,19 @@ through the adoption of less common strategies, including parallelism and
 adaptive evolutionary processes. %, and advanced population initialization.
 Future research should focus on these underexplored areas to further enhance
 the capability and efficiency of genetic algorithms in solving complex
-timetabling problems. The continued integration of hybrid methods also presents
-a promising direction for achieving superior results.
+timetabling problems.
+Especially the topics highlighted in the discussion -- hardware acceleration,
+adaptive parameter steering and the continued integration of hybrid methods --
+present a promising direction for achieving superior results.
+
 
 %% Future Work -------------------------------------------------------------- %%
 \section{Future Work}
-The findings from this work will serve as the basis for the author's master's
-thesis, in which a genetic algorithm for a school timetabling problem will be
-developed.
-The examinations conducted in this paper provide information about the most
-frequently used techniques of genetic search within the timetabling domain,
+The findings from this work will serve as the foundation for the author's
+master's thesis, in which a genetic algorithm for a school timetabling problem
+will be developed.
+The examinations conducted in this paper provide valuable information about the
+most frequently used techniques of genetic search within the timetabling domain,
 which will serve as a reference point for selecting the most appropriate
 genetic methods for the algorithm to be developed.
 
