@@ -153,7 +153,7 @@ However, each of these problems essentially is a resource allocation problem
 with the goal of assigning classrooms, instructors, and students to specific
 time slots for various courses or activities, ensuring that all constraints and
 requirements are met.
-This includes avoiding conflicts (e.g., a student being scheduled for two
+This includes avoiding conflicts (e.g. a student being scheduled for two
 classes at the same time), adhering to institutional policies, and maximizing
 the efficient use of resources.
 
@@ -227,25 +227,23 @@ explained.
 %
 Then, the fundamentals of genetic algorithms and selected advanced concepts
 are presented. Introducing some basic concepts serves to better understand the
-properties of the algorithms, which are presented in the
-discussion section % TODO: change "discussion section" to "research results ..."
-of the paper. The selected concepts which are part of the introduction give
-a good overview of genetic search, but cannot be an exhaustive coverage of
-all developments and research in this field.
+properties of the algorithms, which are presented in the research results
+section of the paper.
+The selected concepts which are part of the introduction give a good overview
+of genetic search, but cannot be an exhaustive coverage of all developments and
+research in this field.
 %
 After the introduction, the algorithms identified in the literature research
 are presented in a morphological box including their most important
 characteristics.
 This provides an overview of the current state of research on genetic
-algorithms for educational timetabling, which is followed by a discussion
-highlighting research gaps that have the potential for further investigation
-providing opportunities for future work.
+algorithms for educational timetabling, which is followed by a breakdown of the
+research results and a discussion highlighting research gaps that have the
+potential for further investigation providing opportunities for future work.
 %
-Finally, the overarching findings from the literature research are used to
-assess the potential success of genetic algorithms in future research.
-
-% TODO: Wenn noch ein zusätzliches Kapitel hinzugefügt wird, dann muss das hier
-%       auch irgendwie noch eingefügt werden.
+Finally, the overarching findings from the literature research and the
+discussion are used to assess the potential success of genetic algorithms in
+future research.
 
 
 %% Methods ------------------------------------------------------------------ %%
@@ -917,7 +915,7 @@ global population like molecules in a diffusion process, with recombination
 restricted to local neighborhoods (see \autoref{tab:parallel-ga-fine})
 \cite{Affenzeller2009}.
 \begin{figure}[h]
-  \includegraphics[scale=0.24]{assets/parallel-ga-fine.png}c
+  \includegraphics[scale=0.24]{assets/parallel-ga-fine.png}
   \caption{
     Population structure of a fine-grained parallel genetic algorithm
     with a cellular model \cite{Affenzeller2009}.
@@ -2136,8 +2134,7 @@ exploration, where more responsive algorithms could lead to more efficient
 search processes and better handling of diverse problem instances.
 
 
-
-\subsection{Integration of Hybrid Methods}
+\subsubsection{Integration of Hybrid Methods}
 Hybrid methods that combine genetic algorithms with other optimization
 techniques, such as local search or constraint programming, have shown promise
 in several studies, including those by Feng (2017, \cite{Feng2017}) and Matias
@@ -2170,7 +2167,7 @@ The prevalence of direct encodings in the research results suggests a potential
 research gap regarding indirect encodings.
 The utilization of direct encoding schemes often leads to large search spaces,
 potentially making the algorithm less efficient.
-
+%
 Indirect encodings, on the other hand, could significantly reduce the size of
 the search space, leading to faster solution discovery.
 Thanh (2007, \cite{Thanh2007}) provides a compelling example of an indirect
@@ -2181,7 +2178,7 @@ efficiency and solution quality.
 
 \subsection{Parallelism and Hardware Acceleration}
 Parallelism in genetic algorithms offers significant advantages in terms of
-computational efficiency and solution quality. However, it is underutilized
+computational efficiency. However, it is underutilized
 in the context of educational timetabling. Studies by Yousef
 (2016, \cite{yousef2016gpu}) and Gozali (2020, \cite{gozali2020islandmodel})
 are among the few that have explored parallel genetic algorithms, particularly
@@ -2201,15 +2198,15 @@ solutions, making them feasible on standard computational setups.
 
 \subsection{Adaptive Strategies and Parameter Tuning}
 A prominent challenge with genetic algorithms is the need for extensive
-parameter tuning\cite{Katoch2021}.
+parameter tuning \cite{Katoch2021}.
 Parameter tuning means adapting input variables of the algorithm
 (e.g. crossover and mutation probabilities) or properties of the selection
 method (e.g. the degree of elitism).
 %
-This tuning process is not only labor-intensive and requires deep domain
-knowledge, it also adapts the genetic algorithm to a specific problem
-instance, making the algorithm impractical for software products distributed
-to end users.
+This tuning process is not only labor-intensive and depending on the algorithm
+may require deep domain knowledge, it also sets the genetic algorithm up for a
+specific problem instance, making the algorithm impractical for software
+products distributed to end users.
 
 Adaptive evolutionary strategies, which dynamically adjust the algorithm's
 behavior based on metrics like the selection pressure, are promising but rarely
@@ -2250,7 +2247,7 @@ landscape dominated by well-established techniques such as direct encoding,
 multi-objective fitness functions, and roulette wheel selection. While these
 methods have proven effective, there is considerable potential for innovation
 through the adoption of less common strategies, including parallelism and 
-adaptive evolutionary processes. %, and advanced population initialization.
+adaptive evolutionary processes.
 Future research should focus on these underexplored areas to further enhance
 the capability and efficiency of genetic algorithms in solving complex
 timetabling problems.
@@ -2265,7 +2262,8 @@ The findings from this work will serve as the foundation for the author's
 master's thesis, in which a genetic algorithm for a school timetabling problem
 will be developed.
 The examinations conducted in this paper provide valuable information about the
-most frequently used techniques of genetic search within the timetabling domain,
+most frequently used techniques of genetic search within the timetabling domain
+as well as promising research gaps,
 which will serve as a reference point for selecting the most appropriate
 genetic methods for the algorithm to be developed.
 

@@ -10,3 +10,7 @@
 {"rule":"EN_COMPOUNDS","sentence":"^\\QMulti-point\\E$"}
 {"rule":"EN_COMPOUNDS","sentence":"^\\QCustomized multi-point\\E$"}
 {"rule":"EN_COMPOUNDS","sentence":"^\\QMulti-point (directed by constraint violation)\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QEncodings.\\E$"}
+{"rule":"EN_COMPOUNDS","sentence":"^\\QFor example, Thanh (2007, \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q) and Gozali (2020, \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q) employ two-point and multi-point crossover methods, respectively, while Goos (2002, \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q) integrates repair functions to handle infeasible offspring.\\E$"}
+{"rule":"POSSESSIVE_APOSTROPHE","sentence":"^\\QIncluded in the overview are properties such as the utilized encoding method, the type of fitness function and the genetic operators selection, crossover and mutation.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QSeveral scientific databases such as IEEE Xplore, ACM Digital Library, SpringerLink and Google Scholar were searched with prominent keywords such as educational timetabling, timetabling, scheduling, heuristic and metaheuristic.\\E$"}
